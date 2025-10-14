@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartik Pandya - Product Manager & Biomedical Innovator</title>
+    
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Particles.js for background effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0a2463;
+            --medical-teal: #06a77d;
+            --accent-gradient: linear-gradient(135deg, #0a2463 0%, #06a77d 100%);
+            --dark-text: #2d3748;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --gold-accent: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scroll Progress Bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--accent-gradient);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--medical-teal);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a2463 0%, #1e3a8a 50%, #06a77d 100%);
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        #about {
+            background: var(--light-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            border: 5px solid white;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--dark-text);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Framework Section */
+        #framework {
+            background: white;
+        }
+
+        .framework-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .framework-diagram {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .framework-node {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 3px solid transparent;
+            position: relative;
+        }
+
+        .framework-node:hover {
+            transform: scale(1.05);
+            border-color: var(--medical-teal);
+            box-shadow: 0 15px 40px rgba(6, 167, 125, 0.3);
+        }
+
+        .framework-node i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .framework-node h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .framework-center {
+            grid-column: 1 / -1;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 2.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* Experience Timeline */
+        #experience {
+            background: var(--light-bg);
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-blue) 0%, var(--medical-teal) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--medical-teal);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(6, 167, 125, 0.5);
+            z-index: 2;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .company {
+            color: var(--medical-teal);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: white;
+        }
+
+        .project-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: var(--light-bg);
+            border: 2px solid transparent;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark-text);
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-gradient);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            border-color: var(--medical-teal);
+        }
+
+        .project-header {
+            padding: 2rem;
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-org {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: var(--light-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary-blue);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--medical-teal);
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 1rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Research Papers */
+        #research {
+            background: var(--light-bg);
+        }
+
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .paper-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            border-left: 5px solid var(--medical-teal);
+        }
+
+        .paper-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-left-width: 10px;
+        }
+
+        .paper-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .paper-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .paper-abstract {
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .paper-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--medical-teal);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .paper-link:hover {
+            gap: 1rem;
+        }
+
+        /* Certificates */
+        #certificates {
+            background: white;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--accent-gradient);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--gold-accent);
+            box-shadow: 0 20px 60px rgba(245, 158, 11, 0.3);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--gold-accent);
+        }
+
+        .cert-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            color: var(--medical-teal);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-date {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer .social-links {
+            margin-bottom: 1.5rem;
+        }
+
+        footer .social-links a {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        footer .social-links a:hover {
+            background: var(--medical-teal);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                margin: 0 auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .framework-diagram {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-content {
+                width: 80%;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .project-tabs {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                width: 100%;
+            }
+        }
+
+        /* Modal for Framework Details */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark-text);
+        }
+
+        .modal-content h3 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#framework">Framework</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>KARTIK PANDYA</h1>
+            <p>"Designing intelligent healthcare and clinical products that turn research into impact and patients into empowered participants"</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/kartikpandya" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://topmate.io/kartikpandya" target="_blank" title="Topmate"><i class="fas fa-calendar-check"></i></a>
+                <a href="mailto:kartik@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/kartikpandya" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="https://via.placeholder.com/300" alt="Kartik Pandya" class="about-image">
+            <div class="about-text">
+                <p>I'm a Product Manager and Biomedical Innovator passionate about transforming complex science into human-centered solutions that improve care, access, and outcomes. With over five years of experience spanning medical devices, biotechnology, digital health, and patient experience design, I specialize in building products that merge clinical evidence, design thinking, and market intelligence.</p>
+                <p>My work focuses on bridging the gap between R&D, policy, and patient reality—whether developing data-driven health dashboards, creating AI frameworks for clinical diagnostics, or leading translational design for wearable therapeutics.</p>
+                <p>I'm currently advancing this mission through a Healthcare Policy & Compliance Fellowship with NPLB Biotech, where I explore the intersection of biomedical regulation, data ethics, and commercialization strategy.</p>
+            </div>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Products Launched</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="8">0</div>
+                <div class="stat-label">Research Papers</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section id="framework">
+        <h2>My Product & Strategy Framework</h2>
+        <div class="framework-container">
+            <div class="framework-diagram">
+                <div class="framework-node" data-framework="clinical">
+                    <i class="fas fa-microscope"></i>
+                    <h3>Clinical Evidence</h3>
+                    <p>Data-driven validation</p>
+                </div>
+                <div class="framework-node" data-framework="design">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Design Thinking</h3>
+                    <p>Human-centered innovation</p>
+                </div>
+                <div class="framework-node" data-framework="market">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Market Intelligence</h3>
+                    <p>Strategic positioning</p>
+                </div>
+                <div class="framework-center">
+                    Product & Strategy Excellence: Where Innovation Meets Impact
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Healthcare Policy & Compliance Fellow</h3>
+                    <div class="company">NPLB Biotech</div>
+                    <div class="date">2024 - Present</div>
+                    <p>Exploring biomedical regulation, data ethics, and commercialization strategy for healthcare innovations.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Senior Product Manager</h3>
+                    <div class="company">Johns Hopkins Medicine</div>
+                    <div class="date">2022 - 2024</div>
+                    <p>Led development of AI-powered clinical diagnostics platform serving 10,000+ patients. Reduced diagnostic time by 40%.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Product Manager - Digital Health</h3>
+                    <div class="company">AstraZeneca</div>
+                    <div class="date">2020 - 2022</div>
+                    <p>Developed data-driven health dashboards and wearable therapeutic solutions for cardiovascular patients.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Biomedical Innovation Specialist</h3>
+                    <div class="company">Motorola Solutions</div>
+                    <div class="date">2019 - 2020</div>
+                    <p>Designed smart neurofeedback prototype for Cervical Dystonia integrating EMG, IMU sensors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-tabs">
+            <button class="tab-btn active" data-tab="product-management">Product Management</button>
+            <button class="tab-btn" data-tab="strategy-consulting">Strategy Consulting</button>
+            <button class="tab-btn" data-tab="business-intelligence">Business Intelligence</button>
+        </div>
+
+        <div id="product-management" class="tab-content active">
+            <div class="project-grid">
+                <div class="project-card" onclick="window.open('#', '_blank')">
+                    <div class="project-header">
+                        <h3>Smart Neurofeedback System</h3>
+                        <div class="project-org">Johns Hopkins Medicine</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">Developed AI-powered neurofeedback prototype for Cervical Dystonia patients, integrating EMG and IMU sensors for real-time therapy.</p>
+                        <div class="project-tags">
+                            <span class="tag">Medical Device</span>
+                            <span class="tag">AI/ML</span>
+                            <span class="tag">Wearables</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="window.open('#', '_blank')">
+                    <div class="project-header">
+                        <h3>Clinical Diagnostics Platform</h3>
+                        <div class="project-org">AstraZeneca</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">Led development of data-driven clinical diagnostic framework serving 10,000+ patients, reducing diagnostic time by 40%.</p>
+                        <div class="project-tags">
+                            <span class="tag">Digital Health</span>
+                            <span class="tag">Data Analytics</span>
+                            <span class="tag">Product Strategy</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="window.open('#', '_blank')">
+                    <div class="project-header">
+                        <h3>Wearable Cardiac Monitor</h3>
+                        <div class="project-org">INC Nanotechnology</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">Designed patient-centered wearable therapeutic solution for continuous cardiovascular monitoring and intervention.</p>
+                        <div class="project-tags">
+                            <span class="tag">IoT</span>
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">UX Design</span>
+                        </div>
+                        <a href="#" class="project-
