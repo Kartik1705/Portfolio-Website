@@ -1,0 +1,45 @@
+{
+  "name": "Kartik Pandya - Product Manager & Life Sciences Expert",
+  "short_name": "KP Portfolio",
+  "description": "Portfolio website of Kartik Pandya - Product Manager specializing in Life Sciences, Biotech, and Product-Market Fit",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1F3C5C",
+  "theme_color": "#314C6F",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "productivity", "education"],
+  "screenshots": [
+    {
+      "src": "assets/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide"
+    },
+    {
+      "src": "assets/images/screenshot-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "platform": "narrow"
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+/* ============================================
+   PRINT STYLESHEET
+   Professional Resume Printing Layout
+   ============================================ */
+
+@media print {
+    /* Reset Page Settings */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    @page {
+        size: A4;
+        margin: 1.5cm 1cm;
+    }
+    
+    body {
+        font-size: 10pt;
+        line-height: 1.4;
+        color: #000;
+        background: #fff;
+    }
+    
+    /* Hide Non-Essential Elements */
+    .loading-screen,
+    .navbar,
+    .scroll-progress,
+    .dark-mode-toggle,
+    .back-to-top,
+    .fab-container,
+    .schedule-meeting-btn,
+    .shortcut-notification,
+    .shortcuts-help-modal,
+    .project-modal,
+    #particles-canvas,
+    .gradient-mesh,
+    .custom-cursor,
+    .mobile-toggle,
+    .btn-resume,
+    button,
+    .section-divider,
+    .dna-helix-divider,
+    .project-quick-view,
+    .project-overlay,
+    .chart-controls,
+    .cert-category-filters,
+    .project-category-filters,
+    .research-category-filters,
+    .exp-category-filters,
+    video,
+    iframe {
+        display: none !important;
+    }
+    
+    /* Page Breaks */
+    .section {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+    
+    .hero-advanced,
+    #about,
+    #experience,
+    #education,
+    #projects,
+    #research {
+        page-break-after: always;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .project-card,
+    .research-card,
+    .exp-card,
+    .education-card,
+    .cert-flip-card {
+        page-break-inside: avoid;
+        margin-bottom: 1cm;
+    }
+    
+    /* Hero Section */
+    .hero-advanced {
+        padding: 2cm 0 1cm;
+        background: #fff !important;
+        min-height: auto;
+    }
+    
+    .profile-img-container {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 1cm;
+        border: 3px solid #314C6F;
+        border-radius: 50%;
+    }
+    
+    .profile-img-advanced {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .hero-name {
+        font-size: 28pt;
+        font-weight: 700;
+        color: #314C6F;
+        text-align: center;
+        margin-bottom: 0.3cm;
+    }
+    
+    .role-container {
+        font-size: 14pt;
+        color: #6384A2;
+        text-align: center;
+        margin-bottom: 0.5cm;
+    }
+    
+    .hero-bio {
+        font-size: 10pt;
+        color: #333;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto 0.5cm;
+    }
+    
+    .stats-inline-row {
+        display: flex;
+        justify-content: center;
+        gap: 2cm;
+        margin-top: 0.5cm;
+    }
+    
+    .stat-inline {
+        text-align: center;
+    }
+    
+    .stat-num-inline {
+        font-size: 18pt;
+        font-weight: 700;
+        color: #314C6F;
+    }
+    
+    .stat-label-inline {
+        font-size: 9pt;
+        color: #666;
+    }
+    
+    /* Contact Info */
+    .hero-content-wrapper::after {
+        content: "📧 Email: your.email@example.com | 📱 Phone: +1-XXX-XXX-XXXX | 🔗 LinkedIn: linkedin.com/in/yourprofile";
+        display: block;
+        text-align: center;
+        font-size: 9pt;
+        color: #666;
+        margin-top: 0.5cm;
+        padding-top: 0.3cm;
+        border-top: 1px solid #ddd;
+    }
+    
+    /* Sections */
+    .section {
+        padding: 0.5cm 0;
+    }
+    
+    .section-title {
+        font-size: 16pt;
+        font-weight: 700;
+        color: #314C6F;
+        margin-bottom: 0.3cm;
+        padding-bottom: 0.2cm;
+        border-bottom: 2px solid #314C6F;
+    }
+    
+    .section-subtitle {
+        font-size: 9pt;
+        color: #666;
+        margin-bottom: 0.3cm;
+    }
+    
+    .subsection-title {
+        font-size: 13pt;
+        font-weight: 600;
+        color: #314C6F;
+        margin: 0.4cm 0 0.2cm;
+    }
+    
+    /* About Section */
+    .about-content {
+        columns: 2;
+        column-gap: 1cm;
+    }
+    
+    .about-text p {
+        margin-bottom: 0.3cm;
+        text-align: justify;
+    }
+    
+    /* Impact Metrics */
+    .impact-metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5cm;
+        margin: 0.5cm 0;
+    }
+    
+    .impact-metric-card {
+        border: 1px solid #ddd;
+        padding: 0.3cm;
+        text-align: center;
+        background: #f9f9f9;
+    }
+    
+    .impact-metric-value {
+        font-size: 16pt;
+        font-weight: 700;
+        color: #314C6F;
+    }
+    
+    .impact-metric-label {
+        font-size: 9pt;
+        color: #666;
+    }
+    
+    /* Experience */
+    .exp-card {
+        border-left: 3px solid #314C6F;
+        padding-left: 0.4cm;
+        margin-bottom: 0.5cm;
+    }
+    
+    .exp-title {
+        font-size: 12pt;
+        font-weight: 600;
+        color: #314C6F;
+    }
+    
+    .exp-company {
+        font-size: 11pt;
+        color: #6384A2;
+        font-weight: 500;
+    }
+    
+    .exp-duration {
+        font-size: 9pt;
+        color: #666;
+    }
+    
+    .exp-description {
+        font-size: 9pt;
+        margin-top: 0.2cm;
+    }
+    
+    .exp-achievements {
+        list-style-type: disc;
+        padding-left: 0.5cm;
+        margin-top: 0.2cm;
+    }
+    
+    .exp-achievements li {
+        font-size: 9pt;
+        margin-bottom: 0.1cm;
+    }
+    
+    /* Education */
+    .education-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.4cm;
+    }
+    
+    .education-card {
+        border: 1px solid #ddd;
+        padding: 0.3cm;
+        background: #f9f9f9;
+    }
+    
+    .edu-degree {
+        font-size: 11pt;
+        font-weight: 600;
+        color: #314C6F;
+    }
+    
+    .edu-school {
+        font-size: 10pt;
+        color: #6384A2;
+    }
+    
+    .edu-period {
+        font-size: 9pt;
+        color: #666;
+    }
+    
+    /* Skills */
+    .skills-category {
+        margin-bottom: 0.4cm;
+    }
+    
+    .skills-category-title {
+        font-size: 11pt;
+        font-weight: 600;
+        color: #314C6F;
+        margin-bottom: 0.2cm;
+    }
+    
+    .skills-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.15cm;
+    }
+    
+    .skill-pill {
+        display: inline-block;
+        padding: 0.1cm 0.3cm;
+        border: 1px solid #314C6F;
+        border-radius: 0.1cm;
+        font-size: 8pt;
+        color: #314C6F;
+        background: #fff;
+    }
+    
+    /* Hide Skills Chart (not print-friendly) */
+    .skills-chart-container {
+        display: none !important;
+    }
+    
+    /* Projects */
+    .projects-masonry {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.4cm;
+    }
+    
+    .project-card {
+        border: 1px solid #ddd;
+        padding: 0.3cm;
+        background: #f9f9f9;
+    }
+    
+    .project-title {
+        font-size: 11pt;
+        font-weight: 600;
+        color: #314C6F;
+        margin-bottom: 0.1cm;
+    }
+    
+    .project-company {
+        font-size: 9pt;
+        color: #6384A2;
+        font-weight: 500;
+    }
+    
+    .project-excerpt {
+        font-size: 9pt;
+        margin: 0.2cm 0;
+    }
+    
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.1cm;
+    }
+    
+    .project-tag {
+        font-size: 7pt;
+        padding: 0.05cm 0.2cm;
+        border: 1px solid #ddd;
+        border-radius: 0.1cm;
+        background: #fff;
+    }
+    
+    .project-thumbnail-wrapper {
+        display: none;
+    }
+    
+    /* Research */
+    .research-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.4cm;
+    }
+    
+    .research-card {
+        border: 1px solid #ddd;
+        padding: 0.3cm;
+        background: #f9f9f9;
+    }
+    
+    .research-title {
+        font-size: 11pt;
+        font-weight: 600;
+        color: #314C6F;
+    }
+    
+    .research-authors {
+        font-size: 9pt;
+        color: #666;
+        font-style: italic;
+    }
+    
+    .research-journal {
+        font-size: 9pt;
+        color: #6384A2;
+    }
+    
+    /* Certifications */
+    .certificates-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.3cm;
+    }
+    
+    .cert-flip-card {
+        border: 1px solid #ddd;
+        padding: 0.2cm;
+        background: #f9f9f9;
+    }
+    
+    .cert-title {
+        font-size: 9pt;
+        font-weight: 600;
+        color: #314C6F;
+    }
+    
+    .cert-issuer {
+        font-size: 8pt;
+        color: #666;
+    }
+    
+    .cert-date {
+        font-size: 8pt;
+        color: #999;
+    }
+    
+    /* Testimonials */
+    .testimonials-carousel {
+        display: block !important;
+    }
+    
+    .testimonial-card {
+        border-left: 3px solid #314C6F;
+        padding-left: 0.3cm;
+        margin-bottom: 0.4cm;
+    }
+    
+    .testimonial-text {
+        font-size: 9pt;
+        font-style: italic;
+        color: #333;
+    }
+    
+    .testimonial-author {
+        font-size: 9pt;
+        font-weight: 600;
+        color: #314C6F;
+        margin-top: 0.2cm;
+    }
+    
+    /* Footer/Contact */
+    .section:last-child::after {
+        content: "Generated from digital portfolio | Visit: yourwebsite.com";
+        display: block;
+        text-align: center;
+        font-size: 8pt;
+        color: #999;
+        margin-top: 1cm;
+        padding-top: 0.3cm;
+        border-top: 1px solid #ddd;
+    }
+    
+    /* Links */
+    a {
+        color: #314C6F;
+        text-decoration: none;
+    }
+    
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        color: #999;
+    }
+    
+    /* Ensure Colors Print */
+    .section-title,
+    .hero-name,
+    .exp-title,
+    .project-title,
+    .research-title {
+        color: #314C6F !important;
+    }
+}
