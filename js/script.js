@@ -815,7 +815,6 @@ function initializeWebsite() {
     setupNavigation();
     setupMobileMenu();
     loadExperience();
-    initExperienceTabs();
     loadEducation();
     loadSkills();
     loadCertificates();
@@ -898,149 +897,75 @@ function setupMobileMenu() {
     }
 }
 
-// ===== LOAD EXPERIENCE WITH COMPACT CARDS =====
-let currentExpFilter = 'all';
-
+// ===== LOAD EXPERIENCE WITH SIMPLE TIMELINE =====
 function loadExperience() {
-    const timelineContainer = document.getElementById('timeline-container');
-    if (!timelineContainer) return;
+    const container = document.getElementById('experience-cards');
+    if (!container) return;
     
-    timelineContainer.innerHTML = '';
+    container.innerHTML = '';
     
-    // Filter experiences
-    let filteredCompanies = companiesData;
-    
-    if (currentExpFilter === 'current') {
-        // Only NPLB
-        filteredCompanies = companiesData.filter(c => 
-            c.name === "No Patient Left Behind"
-        );
-    } else if (currentExpFilter === 'product') {
-        // Product roles but exclude NPLB and Motorola
-        filteredCompanies = companiesData.filter(c => 
-            c.role.toLowerCase().includes('product') && 
-            c.name !== "No Patient Left Behind" &&
-            c.name !== "Motorola Solutions"
-        );
-    } else if (currentExpFilter === 'consulting') {
-        filteredCompanies = companiesData.filter(c => 
-            c.role.toLowerCase().includes('consult') || c.role.toLowerCase().includes('strategy')
-        );
-    } else if (currentExpFilter === 'engineering') {
-        filteredCompanies = companiesData.filter(c => 
-            c.role.toLowerCase().includes('engineer') || c.role.toLowerCase().includes('r&d')
-        );
-    }
-    
-    filteredCompanies.forEach((company, index) => {
-        // Determine category for styling
-        let category = 'experience';
-        if (company.role.toLowerCase().includes('product')) category = 'product';
-        else if (company.role.toLowerCase().includes('consult') || company.role.toLowerCase().includes('strategy')) category = 'consulting';
-        else if (company.role.toLowerCase().includes('engineer') || company.role.toLowerCase().includes('r&d')) category = 'engineering';
-        else if (company.role.toLowerCase().includes('fellowship') || company.role.toLowerCase().includes('bootcamp')) category = 'training';
+    companiesData.forEach((company, index) => {
+        const card = document.createElement('div');
+        card.className = 'exp-card';
+        card.style.opacity = '0';
+        card.style.animation = `fadeInUp 0.6s ease forwards ${index * 0.1}s`;
         
-        // Create timeline item
-        const timelineItem = document.createElement('div');
-        timelineItem.className = 'timeline-item';
-        timelineItem.setAttribute('data-category', category);
-        timelineItem.style.animationDelay = `${index * 0.1}s`;
-        
-        // Extract key achievements from description
-        const achievements = [
-            company.description
-        ];
-        
-        // Determine key skills based on role
+        // Determine skills based on role
         const skills = [];
         if (company.role.toLowerCase().includes('product')) {
-            skills.push('Product Strategy', 'Market Analysis', 'Product Development');
+            skills.push('Product Strategy', 'Market Analysis');
         }
         if (company.role.toLowerCase().includes('marketing')) {
-            skills.push('Marketing Strategy', 'Brand Management', 'Go-to-Market');
+            skills.push('Marketing Strategy', 'Brand Management');
         }
         if (company.role.toLowerCase().includes('consult') || company.role.toLowerCase().includes('strategy')) {
-            skills.push('Strategic Planning', 'Business Analysis', 'Stakeholder Management');
-        }
-        if (company.role.toLowerCase().includes('engineer')) {
-            skills.push('Product Design', 'R&D', 'Technical Development');
-        }
-        if (company.role.toLowerCase().includes('global')) {
-            skills.push('International Markets', 'Global Strategy');
+            skills.push('Strategic Planning', 'Business Analysis');
         }
         
-        // Build timeline card HTML
-        timelineItem.innerHTML = `
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-card" data-category="${category}">
-                    <div class="timeline-arrow"></div>
-                    <div class="timeline-card-header">
-                        <img src="assets/images/companies/${company.logo}" 
-                             alt="${company.name}" 
-                             class="timeline-company-logo"
-                             onerror="this.style.display='none'">
-                        <div class="timeline-role-info">
-                            <h3 class="timeline-role">${company.role}</h3>
-                            <p class="timeline-company">${company.name}</p>
-                        </div>
+        card.innerHTML = `
+            <div class="exp-card-spacer"></div>
+            <div class="exp-card-content">
+                <div class="exp-card-dot"></div>
+                <div class="exp-header">
+                    <img src="assets/images/companies/${company.logo}" alt="${company.name}" class="exp-logo" onerror="this.style.display='none'">
+                    <div class="exp-title-group">
+                        <h3 class="exp-role">${company.role}</h3>
+                        <p class="exp-company">${company.name}</p>
                     </div>
-                    <div class="timeline-date">
-                        <i class="far fa-calendar-alt"></i>
-                        ${company.period}
-                    </div>
-                    ${achievements.length > 0 ? `
-                        <div class="timeline-achievements">
-                            <h4>Key Contributions</h4>
-                            <ul>
-                                ${achievements.map(achievement => `<li>${achievement}</li>`).join('')}
-                            </ul>
-                        </div>
-                    ` : ''}
-                    ${skills.length > 0 ? `
-                        <div class="timeline-skills">
-                            ${skills.map(skill => `<span class="timeline-skill-tag">${skill}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                    ${company.website && company.website !== '#' ? `
-                        <a href="${company.website}" target="_blank" class="timeline-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            Visit Company
-                        </a>
-                    ` : ''}
                 </div>
+                <div class="exp-date">
+                    <i class="far fa-calendar-alt"></i>
+                    ${company.period}
+                </div>
+                <p class="exp-description">${company.description}</p>
+                ${skills.length > 0 ? `
+                    <div class="exp-skills">
+                        ${skills.map(skill => `<span class="exp-skill-tag">${skill}</span>`).join('')}
+                    </div>
+                ` : ''}
+                ${company.website && company.website !== '#' ? `
+                    <a href="${company.website}" target="_blank" class="exp-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Visit Company
+                    </a>
+                ` : ''}
             </div>
+            <div class="exp-card-spacer"></div>
         `;
         
-        timelineContainer.appendChild(timelineItem);
+        container.appendChild(card);
     });
-    
-    // Show empty state if no experiences
-    if (filteredCompanies.length === 0) {
-        timelineContainer.innerHTML = `
-            <div class="timeline-empty">
-                <i class="fas fa-briefcase"></i>
-                <p>No experiences found in this category.</p>
-            </div>
-        `;
-    }
 }
 
-// Experience Category Filter Pills
-function initExperienceTabs() {
-    const pills = document.querySelectorAll('.exp-category-pill');
-    
-    pills.forEach(pill => {
-        pill.addEventListener('click', () => {
-            // Update active state
-            pills.forEach(p => p.classList.remove('active'));
-            pill.classList.add('active');
-            
-            // Update filter and reload
-            currentExpFilter = pill.getAttribute('data-filter');
-            loadExperience();
-        });
-    });
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 // ===== LOAD EDUCATION =====
