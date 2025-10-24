@@ -250,70 +250,6 @@
         </div>
     </section>
 
-    <!-- Impact Metrics Dashboard -->
-    <section class="impact-metrics-section">
-        <div class="container">
-            <h2 class="section-title" style="color: var(--cream-light);">Impact at a Glance</h2>
-            <p class="section-subtitle" style="color: var(--blue-secondary);">Measurable Results Across Product & Strategy Initiatives</p>
-            
-            <div class="metrics-grid">
-                <div class="metric-card glass-card" data-tooltip="Revenue generated through product launches and GTM strategies">
-                    <div class="metric-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <div class="metric-value" data-target="5000000">$0</div>
-                    <div class="metric-label">Revenue Generated</div>
-                    <div class="metric-sublabel">Product Launches & GTM</div>
-                </div>
-                
-                <div class="metric-card glass-card" data-tooltip="Users reached through products and platforms">
-                    <div class="metric-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="metric-value" data-target="100000">0</div>
-                    <div class="metric-label">Users Impacted</div>
-                    <div class="metric-sublabel">Across All Platforms</div>
-                </div>
-                
-                <div class="metric-card glass-card" data-tooltip="Successfully launched products from 0 to 1">
-                    <div class="metric-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="metric-value" data-target="8">0</div>
-                    <div class="metric-label">Products Launched</div>
-                    <div class="metric-sublabel">0-to-1 Initiatives</div>
-                </div>
-                
-                <div class="metric-card glass-card" data-tooltip="Companies served through consulting and product work">
-                    <div class="metric-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="metric-value" data-target="15">0</div>
-                    <div class="metric-label">Companies Served</div>
-                    <div class="metric-sublabel">Consulting & PMM</div>
-                </div>
-                
-                <div class="metric-card glass-card" data-tooltip="Average success rate across product initiatives">
-                    <div class="metric-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="metric-value" data-target="92">0<span class="metric-percent">%</span></div>
-                    <div class="metric-label">Success Rate</div>
-                    <div class="metric-sublabel">Product Adoption</div>
-                </div>
-                
-                <div class="metric-card glass-card" data-tooltip="Publications and research papers">
-                    <div class="metric-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="metric-value" data-target="6">0</div>
-                    <div class="metric-label">Publications</div>
-                    <div class="metric-sublabel">Research Papers</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- About Me Section -->
     <section id="about" class="section about-section">
         <div class="container">
@@ -399,6 +335,222 @@
                         <span class="indicator" data-index="2"></span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section - Interactive Timeline -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <h2 class="section-title">Professional Journey</h2>
+            <p class="section-subtitle">5+ Years of Impact | 15+ Companies | Product Management, Strategy & Innovation</p>
+            
+            <!-- Category Filter Pills -->
+            <div class="exp-category-filters">
+                <button class="exp-category-pill active" data-filter="all">
+                    All Experiences <span class="exp-pill-count">15</span>
+                </button>
+                <button class="exp-category-pill" data-filter="current">
+                    Current Role <span class="exp-pill-count">1</span>
+                </button>
+                <button class="exp-category-pill" data-filter="product">
+                    Product & Marketing <span class="exp-pill-count">4</span>
+                </button>
+                <button class="exp-category-pill" data-filter="consulting">
+                    Strategy Consulting <span class="exp-pill-count">6</span>
+                </button>
+                <button class="exp-category-pill" data-filter="engineering">
+                    Research & Engineering <span class="exp-pill-count">3</span>
+                </button>
+            </div>
+            
+            <!-- Interactive Timeline Container -->
+            <div class="experience-timeline">
+                <!-- Timeline Center Line -->
+                <div class="timeline-line"></div>
+                
+                <!-- Timeline will be populated by JavaScript -->
+                <div id="timeline-container">
+                    <!-- Timeline items will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education, Skills & Certificates Section -->
+    <section id="education" class="section education-skills-section">
+        <div class="container">
+            <h2 class="section-title">Education, Skills & Certifications</h2>
+            
+            <!-- Education -->
+            <div class="subsection">
+                <h3 class="subsection-title">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </h3>
+                <div class="education-grid" id="education-grid">
+                    <!-- Education will be loaded by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Skills -->
+            <div class="subsection">
+                <h3 class="subsection-title">
+                    <i class="fas fa-tools"></i> Skills
+                </h3>
+                
+                <!-- Product Frameworks -->
+                <div class="skills-category">
+                    <h4 class="skills-category-title">
+                        <i class="fas fa-lightbulb"></i> Product Frameworks
+                    </h4>
+                    <div class="skills-pills" id="product-frameworks-pills">
+                        <!-- Product frameworks will be loaded by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Technical Skills -->
+                <div class="skills-category">
+                    <h4 class="skills-category-title">
+                        <i class="fas fa-code"></i> Technical Skills
+                    </h4>
+                    <div class="skills-pills" id="technical-skills-pills">
+                        <!-- Technical skills will be loaded by JavaScript -->
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Certificates -->
+            <div class="subsection">
+                <h3 class="subsection-title">
+                    <i class="fas fa-certificate"></i> Professional Certifications
+                </h3>
+                <p class="subsection-subtitle">12+ Certifications | Product Management, Marketing & Innovation Excellence</p>
+                
+                <!-- Certificate Category Filter Pills -->
+                <div class="cert-category-filters">
+                    <button class="cert-category-pill active" data-category="all">
+                        All Certifications <span class="cert-pill-count">12</span>
+                    </button>
+                    <button class="cert-category-pill" data-category="Product Management">
+                        <i class="fas fa-box-open"></i>
+                        Product Management <span class="cert-pill-count">5</span>
+                    </button>
+                    <button class="cert-category-pill" data-category="Marketing">
+                        <i class="fas fa-bullhorn"></i>
+                        Marketing <span class="cert-pill-count">5</span>
+                    </button>
+                    <button class="cert-category-pill" data-category="AI/ML">
+                        <i class="fas fa-robot"></i>
+                        AI/ML <span class="cert-pill-count">1</span>
+                    </button>
+                    <button class="cert-category-pill" data-category="Process Improvement">
+                        <i class="fas fa-chart-line"></i>
+                        Process <span class="cert-pill-count">1</span>
+                    </button>
+                </div>
+                
+                <!-- Interactive Certificate Gallery (3D Flip Cards) -->
+                <div class="certificates-gallery" id="certificates-gallery">
+                    <!-- Certificate flip cards will be loaded here by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Certificate Modal -->
+            <div class="certificate-modal" id="certificate-modal">
+                <div class="modal-backdrop"></div>
+                <div class="modal-content">
+                    <button class="modal-close" aria-label="Close modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button class="modal-nav modal-prev" aria-label="Previous certificate">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="modal-nav modal-next" aria-label="Next certificate">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="modal-image-container">
+                        <img id="modal-cert-image" src="" alt="Certificate">
+                    </div>
+                    <div class="modal-info">
+                        <h3 id="modal-cert-title"></h3>
+                        <p id="modal-cert-issuer"></p>
+                        <span class="cert-type" id="modal-cert-type"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <!-- Projects Section - Masonry Gallery -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">Projects & Case Studies</h2>
+            <p class="section-subtitle">15+ Strategic Initiatives | Healthcare, Product Strategy & Innovation</p>
+            
+            <!-- Category Filter Pills -->
+            <div class="project-category-filters">
+                <button class="project-category-pill active" data-filter="all">
+                    All Projects <span class="project-pill-count">15</span>
+                </button>
+                <button class="project-category-pill" data-filter="healthcare">
+                    <i class="fas fa-heartbeat"></i>
+                    Healthcare <span class="project-pill-count">1</span>
+                </button>
+                <button class="project-category-pill" data-filter="product">
+                    <i class="fas fa-box"></i>
+                    Product <span class="project-pill-count">4</span>
+                </button>
+                <button class="project-category-pill" data-filter="strategy">
+                    <i class="fas fa-chess"></i>
+                    Strategy <span class="project-pill-count">5</span>
+                </button>
+                <button class="project-category-pill" data-filter="technology">
+                    <i class="fas fa-microchip"></i>
+                    Technology <span class="project-pill-count">5</span>
+                </button>
+            </div>
+            
+            <!-- Masonry Project Gallery -->
+            <div class="projects-masonry" id="projects-masonry">
+                <!-- Project cards will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Publications Section - Academic Layout -->
+        <section id="research" class="section research-section">
+        <div class="container">
+            <h2 class="section-title">Research & Publications</h2>
+            <p class="section-subtitle">6 Published Papers | Machine Learning, Supply Chain & Sustainable Energy</p>
+            
+            <!-- Research Category Pills -->
+            <div class="research-category-filters">
+                <button class="research-category-pill active" data-filter="all">
+                    All Publications <span class="research-pill-count">6</span>
+                </button>
+                <button class="research-category-pill" data-filter="Machine Learning">
+                    <i class="fas fa-brain"></i>
+                    Machine Learning <span class="research-pill-count">3</span>
+                </button>
+                <button class="research-category-pill" data-filter="Supply Chain">
+                    <i class="fas fa-truck"></i>
+                    Supply Chain <span class="research-pill-count">2</span>
+                </button>
+                <button class="research-category-pill" data-filter="Energy">
+                    <i class="fas fa-leaf"></i>
+                    Sustainable Energy <span class="research-pill-count">1</span>
+                </button>
+            </div>
+            
+            <!-- Academic Publication Cards -->
+            <div class="research-publications" id="research-publications">
+                <!-- Research papers will be loaded by JavaScript -->
             </div>
         </div>
     </section>
@@ -489,375 +641,12 @@
         </div>
     </section>
 
-    <!-- DNA Section Divider -->
-    <div class="section-divider">
-        <svg class="dna-helix-divider" viewBox="0 0 1200 100" preserveAspectRatio="xMidYMid meet">
-            <path class="helix-strand-1" d="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50" />
-            <path class="helix-strand-2" d="M0,50 Q150,80 300,50 T600,50 T900,50 T1200,50" />
-            <circle class="dna-base-pair" cx="150" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="150" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="300" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="450" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="450" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="600" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="750" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="750" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="900" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="1050" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="1050" cy="65" r="4" />
-        </svg>
-    </div>
-
-    <!-- Experience Section - Interactive Timeline -->
-    <section id="experience" class="section experience-section">
-        <div class="container">
-            <h2 class="section-title">Professional Journey</h2>
-            <p class="section-subtitle">5+ Years of Impact | 15+ Companies | Product Management, Strategy & Innovation</p>
-            
-            <!-- Category Filter Pills -->
-            <div class="exp-category-filters">
-                <button class="exp-category-pill active" data-filter="all">
-                    All Experiences <span class="exp-pill-count">15</span>
-                </button>
-                <button class="exp-category-pill" data-filter="current">
-                    Current Role <span class="exp-pill-count">1</span>
-                </button>
-                <button class="exp-category-pill" data-filter="product">
-                    Product & Marketing <span class="exp-pill-count">4</span>
-                </button>
-                <button class="exp-category-pill" data-filter="consulting">
-                    Strategy Consulting <span class="exp-pill-count">6</span>
-                </button>
-                <button class="exp-category-pill" data-filter="engineering">
-                    Research & Engineering <span class="exp-pill-count">3</span>
-                </button>
-            </div>
-            
-            <!-- Interactive Timeline Container -->
-            <div class="experience-timeline">
-                <!-- Timeline Center Line -->
-                <div class="timeline-line"></div>
-                
-                <!-- Timeline will be populated by JavaScript -->
-                <div id="timeline-container">
-                    <!-- Timeline items will be loaded here -->
-                </div>
-            </div>
-        </div>
-    </section>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DNA Section Divider -->
-    <div class="section-divider">
-        <svg class="dna-helix-divider" viewBox="0 0 1200 100" preserveAspectRatio="xMidYMid meet">
-            <path class="helix-strand-1" d="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50" />
-            <path class="helix-strand-2" d="M0,50 Q150,80 300,50 T600,50 T900,50 T1200,50" />
-            <circle class="dna-base-pair" cx="150" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="150" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="300" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="450" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="450" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="600" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="750" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="750" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="900" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="1050" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="1050" cy="65" r="4" />
-        </svg>
-    </div>
-
-    <!-- Education, Skills & Certificates Section -->
-    <section id="education" class="section education-skills-section">
-        <div class="container">
-            <h2 class="section-title">Education, Skills & Certifications</h2>
-            
-            <!-- Education -->
-            <div class="subsection">
-                <h3 class="subsection-title">
-                    <i class="fas fa-graduation-cap"></i> Education
-                </h3>
-                <div class="education-grid" id="education-grid">
-                    <!-- Education will be loaded by JavaScript -->
-                </div>
-            </div>
-            
-            <!-- Skills -->
-            <div class="subsection">
-                <h3 class="subsection-title">
-                    <i class="fas fa-tools"></i> Skills
-                </h3>
-                
-                <!-- Product Frameworks -->
-                <div class="skills-category">
-                    <h4 class="skills-category-title">
-                        <i class="fas fa-lightbulb"></i> Product Frameworks
-                    </h4>
-                    <div class="skills-pills" id="product-frameworks-pills">
-                        <!-- Product frameworks will be loaded by JavaScript -->
-                    </div>
-                </div>
-                
-                <!-- Technical Skills -->
-                <div class="skills-category">
-                    <h4 class="skills-category-title">
-                        <i class="fas fa-code"></i> Technical Skills
-                    </h4>
-                    <div class="skills-pills" id="technical-skills-pills">
-                        <!-- Technical skills will be loaded by JavaScript -->
-                    </div>
-                </div>
-                
-                <!-- Skills Visualization Chart -->
-                <div class="skills-chart-container">
-                    <div class="skills-chart-header">
-                        <h4 class="skills-category-title">
-                            <i class="fas fa-chart-radar"></i> Skills Proficiency Visualization
-                        </h4>
-                        <div class="chart-controls">
-                            <button class="chart-toggle-btn active" data-chart="radar">
-                                <i class="fas fa-chart-radar"></i> Radar
-                            </button>
-                            <button class="chart-toggle-btn" data-chart="bar">
-                                <i class="fas fa-chart-bar"></i> Bar
-                            </button>
-                            <button class="chart-toggle-btn" data-chart="polar">
-                                <i class="fas fa-circle-notch"></i> Polar
-                            </button>
-                        </div>
-                    </div>
-                    <div class="skills-chart-wrapper">
-                        <canvas id="skillsChart"></canvas>
-                    </div>
-                    <div class="chart-legend-custom" id="chartLegend"></div>
-                </div>
-            </div>
-            
-            <!-- Certificates -->
-            <div class="subsection">
-                <h3 class="subsection-title">
-                    <i class="fas fa-certificate"></i> Professional Certifications
-                </h3>
-                <p class="subsection-subtitle">12+ Certifications | Product Management, Marketing & Innovation Excellence</p>
-                
-                <!-- Certificate Category Filter Pills -->
-                <div class="cert-category-filters">
-                    <button class="cert-category-pill active" data-category="all">
-                        All Certifications <span class="cert-pill-count">12</span>
-                    </button>
-                    <button class="cert-category-pill" data-category="Product Management">
-                        <i class="fas fa-box-open"></i>
-                        Product Management <span class="cert-pill-count">5</span>
-                    </button>
-                    <button class="cert-category-pill" data-category="Marketing">
-                        <i class="fas fa-bullhorn"></i>
-                        Marketing <span class="cert-pill-count">5</span>
-                    </button>
-                    <button class="cert-category-pill" data-category="AI/ML">
-                        <i class="fas fa-robot"></i>
-                        AI/ML <span class="cert-pill-count">1</span>
-                    </button>
-                    <button class="cert-category-pill" data-category="Process Improvement">
-                        <i class="fas fa-chart-line"></i>
-                        Process <span class="cert-pill-count">1</span>
-                    </button>
-                </div>
-                
-                <!-- Interactive Certificate Gallery (3D Flip Cards) -->
-                <div class="certificates-gallery" id="certificates-gallery">
-                    <!-- Certificate flip cards will be loaded here by JavaScript -->
-                </div>
-            </div>
-            
-            <!-- Certificate Modal -->
-            <div class="certificate-modal" id="certificate-modal">
-                <div class="modal-backdrop"></div>
-                <div class="modal-content">
-                    <button class="modal-close" aria-label="Close modal">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <button class="modal-nav modal-prev" aria-label="Previous certificate">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="modal-nav modal-next" aria-label="Next certificate">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="modal-image-container">
-                        <img id="modal-cert-image" src="" alt="Certificate">
-                    </div>
-                    <div class="modal-info">
-                        <h3 id="modal-cert-title"></h3>
-                        <p id="modal-cert-issuer"></p>
-                        <span class="cert-type" id="modal-cert-type"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DNA Section Divider -->
-    <div class="section-divider">
-        <svg class="dna-helix-divider" viewBox="0 0 1200 100" preserveAspectRatio="xMidYMid meet">
-            <path class="helix-strand-1" d="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50" />
-            <path class="helix-strand-2" d="M0,50 Q150,80 300,50 T600,50 T900,50 T1200,50" />
-            <circle class="dna-base-pair" cx="150" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="150" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="300" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="450" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="450" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="600" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="750" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="750" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="900" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="1050" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="1050" cy="65" r="4" />
-        </svg>
-    </div>
-
-    <!-- Projects Section -->
-    <!-- Projects Section - Masonry Gallery -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <h2 class="section-title">Projects & Case Studies</h2>
-            <p class="section-subtitle">15+ Strategic Initiatives | Healthcare, Product Strategy & Innovation</p>
-            
-            <!-- Category Filter Pills -->
-            <div class="project-category-filters">
-                <button class="project-category-pill active" data-filter="all">
-                    All Projects <span class="project-pill-count">15</span>
-                </button>
-                <button class="project-category-pill" data-filter="healthcare">
-                    <i class="fas fa-heartbeat"></i>
-                    Healthcare <span class="project-pill-count">1</span>
-                </button>
-                <button class="project-category-pill" data-filter="product">
-                    <i class="fas fa-box"></i>
-                    Product <span class="project-pill-count">4</span>
-                </button>
-                <button class="project-category-pill" data-filter="strategy">
-                    <i class="fas fa-chess"></i>
-                    Strategy <span class="project-pill-count">5</span>
-                </button>
-                <button class="project-category-pill" data-filter="technology">
-                    <i class="fas fa-microchip"></i>
-                    Technology <span class="project-pill-count">5</span>
-                </button>
-            </div>
-            
-            <!-- Masonry Project Gallery -->
-            <div class="projects-masonry" id="projects-masonry">
-                <!-- Project cards will be loaded here by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- DNA Section Divider -->
-    <div class="section-divider">
-        <svg class="dna-helix-divider" viewBox="0 0 1200 100" preserveAspectRatio="xMidYMid meet">
-            <path class="helix-strand-1" d="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50" />
-            <path class="helix-strand-2" d="M0,50 Q150,80 300,50 T600,50 T900,50 T1200,50" />
-            <circle class="dna-base-pair" cx="150" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="150" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="300" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="450" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="450" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="600" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="750" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="750" cy="65" r="4" />
-            <circle class="dna-base-pair" cx="900" cy="50" r="4" />
-            <circle class="dna-base-pair" cx="1050" cy="35" r="4" />
-            <circle class="dna-base-pair" cx="1050" cy="65" r="4" />
-        </svg>
-    </div>
-
-    <!-- Research & Publications Section - Academic Layout -->
-        <section id="research" class="section research-section">
-        <div class="container">
-            <h2 class="section-title">Research & Publications</h2>
-            <p class="section-subtitle">6 Published Papers | Machine Learning, Supply Chain & Sustainable Energy</p>
-            
-            <!-- Research Category Pills -->
-            <div class="research-category-filters">
-                <button class="research-category-pill active" data-filter="all">
-                    All Publications <span class="research-pill-count">6</span>
-                </button>
-                <button class="research-category-pill" data-filter="Machine Learning">
-                    <i class="fas fa-brain"></i>
-                    Machine Learning <span class="research-pill-count">3</span>
-                </button>
-                <button class="research-category-pill" data-filter="Supply Chain">
-                    <i class="fas fa-truck"></i>
-                    Supply Chain <span class="research-pill-count">2</span>
-                </button>
-                <button class="research-category-pill" data-filter="Energy">
-                    <i class="fas fa-leaf"></i>
-                    Sustainable Energy <span class="research-pill-count">1</span>
-                </button>
-            </div>
-            
-            <!-- Academic Publication Cards -->
-            <div class="research-publications" id="research-publications">
-                <!-- Research papers will be loaded by JavaScript -->
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Kartik Pandya. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Floating Action Buttons -->
-    <div class="fab-container">
-        <button class="fab-button" id="calendarFab" data-tooltip="Schedule Meeting" onclick="window.open('https://calendly.com/your-link', '_blank')">
-            <i class="fas fa-calendar-alt"></i>
-        </button>
-        <button class="fab-button" id="resumeFab" data-tooltip="Download Resume" onclick="downloadResume()">
-            <i class="fas fa-download"></i>
-        </button>
-        <button class="fab-button" id="emailFab" data-tooltip="Send Email" onclick="window.location.href='mailto:kartikpandya@example.com'">
-            <i class="fas fa-envelope"></i>
-        </button>
-        <button class="fab-button fab-share" id="shareFab" data-tooltip="Share Portfolio" onclick="toggleShareMenu()">
-            <i class="fas fa-share-nodes"></i>
-        </button>
-    </div>
-    
-    <!-- Share Menu -->
-    <div class="share-menu" id="shareMenu">
-        <div class="share-menu-header">
-            <h4>Share Portfolio</h4>
-            <button class="share-menu-close" onclick="toggleShareMenu()">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="share-menu-body">
-            <button class="share-button share-linkedin" onclick="shareOn('linkedin')">
-                <i class="fab fa-linkedin-in"></i>
-                <span>LinkedIn</span>
-            </button>
-            <button class="share-button share-twitter" onclick="shareOn('twitter')">
-                <i class="fab fa-twitter"></i>
-                <span>Twitter</span>
-            </button>
-            <button class="share-button share-facebook" onclick="shareOn('facebook')">
-                <i class="fab fa-facebook-f"></i>
-                <span>Facebook</span>
-            </button>
-            <button class="share-button share-email" onclick="shareOn('email')">
-                <i class="fas fa-envelope"></i>
-                <span>Email</span>
-            </button>
-            <button class="share-button share-copy" onclick="shareOn('copy')">
-                <i class="fas fa-link"></i>
-                <span>Copy Link</span>
-            </button>
-        </div>
-    </div>
 
     <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
