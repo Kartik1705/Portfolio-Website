@@ -3,7 +3,7 @@
 // ===== LOADING SCREEN ANIMATION =====
 function initLoadingScreen() {
     const loadingScreen = document.querySelector('.loading-screen');
-    const progressBar = document.querySelector('.progress-bar');
+    const progressBar = document.querySelector('.loader-progress-bar');
     
     if (!loadingScreen || !progressBar) return;
     
@@ -17,6 +17,7 @@ function initLoadingScreen() {
             // Remove loading class after animation
             setTimeout(() => {
                 document.body.classList.remove('loading');
+                loadingScreen.style.display = 'none';
             }, 500);
         }
         progressBar.style.width = progress + '%';
