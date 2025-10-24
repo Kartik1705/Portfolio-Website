@@ -2543,7 +2543,8 @@ button {
 /* Vertical Timeline Container */
 .experience-timeline {
     position: relative;
-    max-width: 1400px;
+    max-width: 1200px;
+    width: 95%;
     margin: 0 auto;
     padding: 2rem 0;
 }
@@ -2673,19 +2674,19 @@ button {
 
 /* Timeline Content - Alternating Left/Right */
 .timeline-content {
-    width: 42%;
-    max-width: 500px;
+    width: 40%;
+    max-width: 450px;
     position: absolute;
     top: 0;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    left: calc(50% + 30px);
+    left: 52%;
     text-align: left;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    right: calc(50% + 30px);
+    right: 52%;
     text-align: left;
 }
 
