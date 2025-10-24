@@ -1674,20 +1674,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initCustomCursor();
 });
 
-// ===== LOADING SCREEN =====
-window.addEventListener('load', function() {
-    const loadingScreen = document.getElementById('loading-screen');
-    const body = document.body;
-    
-    // Simulate minimum loading time for smooth transition
-    setTimeout(() => {
-        loadingScreen.style.opacity = '0';
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-            body.classList.remove('loading');
-        }, 500);
-    }, 1000);
-});
-
 // ===== CERTIFICATE ZOOM FUNCTIONALITY =====
 
