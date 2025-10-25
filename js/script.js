@@ -922,10 +922,13 @@ function loadExperience() {
             skills.push('Strategic Planning', 'Business Analysis');
         }
         
+        // Determine if this card is odd (right side) or even (left side)
+        const isOdd = (index + 1) % 2 !== 0;
+        
         card.innerHTML = `
-            <div class="exp-card-spacer"></div>
+            ${isOdd ? '<div class="exp-card-spacer"></div>' : ''}
+            <div class="exp-card-dot"></div>
             <div class="exp-card-content">
-                <div class="exp-card-dot"></div>
                 <div class="exp-header">
                     <img src="assets/images/companies/${company.logo}" alt="${company.name}" class="exp-logo" onerror="this.style.display='none'">
                     <div class="exp-title-group">
@@ -950,7 +953,7 @@ function loadExperience() {
                     </a>
                 ` : ''}
             </div>
-            <div class="exp-card-spacer"></div>
+            ${!isOdd ? '<div class="exp-card-spacer"></div>' : ''}
         `;
         
         container.appendChild(card);
