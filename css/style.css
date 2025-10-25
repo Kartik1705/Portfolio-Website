@@ -7880,8 +7880,9 @@ body.dark-mode .timeline-content {
 }
 
 .exp-card {
-    display: flex;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 50px 1fr;
+    gap: 0;
     align-items: flex-start;
     position: relative;
     opacity: 0;
@@ -7906,16 +7907,33 @@ body.dark-mode .timeline-content {
     }
 }
 
-.exp-card:nth-child(even) {
-    flex-direction: row-reverse;
+/* Odd cards - content on RIGHT side */
+.exp-card:nth-child(odd) .exp-card-content {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.exp-card:nth-child(odd) .exp-card-spacer {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Even cards - content on LEFT side */
+.exp-card:nth-child(even) .exp-card-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.exp-card:nth-child(even) .exp-card-spacer {
+    grid-column: 3;
+    grid-row: 1;
 }
 
 .exp-card-spacer {
-    flex: 1;
+    position: relative;
 }
 
 .exp-card-content {
-    flex: 1;
     background: linear-gradient(135deg, 
         rgba(255, 255, 255, 0.08) 0%,
         rgba(255, 255, 255, 0.03) 100%
@@ -7959,7 +7977,8 @@ body.dark-mode .timeline-content {
 
 .exp-card-dot {
     position: absolute;
-    left: calc(50% - 10px);
+    left: 50%;
+    transform: translateX(-50%);
     top: 30px;
     width: 20px;
     height: 20px;
@@ -9238,10 +9257,30 @@ body.dark-mode .timeline-content {
 
 /* Ensure alternating layout is clear */
 .exp-card:nth-child(odd) .exp-card-content {
-    margin-left: 20px;
+    margin-left: 0 !important;
 }
 
 .exp-card:nth-child(even) .exp-card-content {
-    margin-right: 20px;
+    margin-right: 0 !important;
+}
+
+/* Add connecting line from dot to card */
+.exp-card::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    width: 25px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(40, 116, 166, 0.5), transparent);
+    z-index: 1;
+}
+
+.exp-card:nth-child(odd)::before {
+    left: calc(50% + 10px);
+}
+
+.exp-card:nth-child(even)::before {
+    right: calc(50% + 10px);
+    background: linear-gradient(270deg, rgba(40, 116, 166, 0.5), transparent);
 }
 
