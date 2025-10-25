@@ -925,36 +925,73 @@ function loadExperience() {
         // Determine if this card is odd (right side) or even (left side)
         const isOdd = (index + 1) % 2 !== 0;
         
-        card.innerHTML = `
-            ${isOdd ? '<div class="exp-card-spacer"></div>' : ''}
-            <div class="exp-card-dot"></div>
-            <div class="exp-card-content">
-                <div class="exp-header">
-                    <img src="assets/images/companies/${company.logo}" alt="${company.name}" class="exp-logo" onerror="this.style.display='none'">
-                    <div class="exp-title-group">
-                        <h3 class="exp-role">${company.role}</h3>
-                        <p class="exp-company">${company.name}</p>
-                    </div>
+        if (isOdd) {
+            // Odd cards: empty left, dot center, content right
+            card.innerHTML = `
+                <div class="exp-card-spacer"></div>
+                <div class="exp-card-dot-wrapper">
+                    <div class="exp-card-dot"></div>
                 </div>
-                <div class="exp-date">
-                    <i class="far fa-calendar-alt"></i>
-                    ${company.period}
-                </div>
-                <p class="exp-description">${company.description}</p>
-                ${skills.length > 0 ? `
-                    <div class="exp-skills">
-                        ${skills.map(skill => `<span class="exp-skill-tag">${skill}</span>`).join('')}
+                <div class="exp-card-content">
+                    <div class="exp-header">
+                        <img src="assets/images/companies/${company.logo}" alt="${company.name}" class="exp-logo" onerror="this.style.display='none'">
+                        <div class="exp-title-group">
+                            <h3 class="exp-role">${company.role}</h3>
+                            <p class="exp-company">${company.name}</p>
+                        </div>
                     </div>
-                ` : ''}
-                ${company.website && company.website !== '#' ? `
-                    <a href="${company.website}" target="_blank" class="exp-link">
-                        <i class="fas fa-external-link-alt"></i>
-                        Visit Company
-                    </a>
-                ` : ''}
-            </div>
-            ${!isOdd ? '<div class="exp-card-spacer"></div>' : ''}
-        `;
+                    <div class="exp-date">
+                        <i class="far fa-calendar-alt"></i>
+                        ${company.period}
+                    </div>
+                    <p class="exp-description">${company.description}</p>
+                    ${skills.length > 0 ? `
+                        <div class="exp-skills">
+                            ${skills.map(skill => `<span class="exp-skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    ` : ''}
+                    ${company.website && company.website !== '#' ? `
+                        <a href="${company.website}" target="_blank" class="exp-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Company
+                        </a>
+                    ` : ''}
+                </div>
+            `;
+        } else {
+            // Even cards: content left, dot center, empty right
+            card.innerHTML = `
+                <div class="exp-card-content">
+                    <div class="exp-header">
+                        <img src="assets/images/companies/${company.logo}" alt="${company.name}" class="exp-logo" onerror="this.style.display='none'">
+                        <div class="exp-title-group">
+                            <h3 class="exp-role">${company.role}</h3>
+                            <p class="exp-company">${company.name}</p>
+                        </div>
+                    </div>
+                    <div class="exp-date">
+                        <i class="far fa-calendar-alt"></i>
+                        ${company.period}
+                    </div>
+                    <p class="exp-description">${company.description}</p>
+                    ${skills.length > 0 ? `
+                        <div class="exp-skills">
+                            ${skills.map(skill => `<span class="exp-skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    ` : ''}
+                    ${company.website && company.website !== '#' ? `
+                        <a href="${company.website}" target="_blank" class="exp-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Company
+                        </a>
+                    ` : ''}
+                </div>
+                <div class="exp-card-dot-wrapper">
+                    <div class="exp-card-dot"></div>
+                </div>
+                <div class="exp-card-spacer"></div>
+            `;
+        }
         
         container.appendChild(card);
     });
