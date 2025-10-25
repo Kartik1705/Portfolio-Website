@@ -7850,9 +7850,11 @@ body.dark-mode .timeline-content {
 /* ===== PROFESSIONAL EXPERIENCE SECTION - ADVANCED TIMELINE ===== */
 .experience-timeline-wrapper {
     position: relative;
-    max-width: 1200px;
+    max-width: 1400px;
+    width: 100%;
     margin: 60px auto 0;
-    padding: 0 40px;
+    padding: 0 60px;
+    box-sizing: border-box;
 }
 
 .experience-timeline-line {
@@ -8135,80 +8137,6 @@ body.dark-mode .timeline-content {
     transform: translateX(4px);
 }
 
-/* Desktop - Ensure cards don't get cut off */
-@media (min-width: 769px) {
-    .experience-timeline-wrapper {
-        overflow: visible;
-    }
-    
-    .experience-cards {
-        overflow: visible;
-    }
-    
-    .exp-card {
-        overflow: visible;
-    }
-    
-    .exp-card-content {
-        box-sizing: border-box;
-    }
-}
-
-/* Mobile Responsive for Experience */
-@media (max-width: 768px) {
-    .experience-timeline-line {
-        left: 20px;
-    }
-    
-    .exp-card,
-    .exp-card:nth-child(even) {
-        flex-direction: column;
-        padding-left: 60px;
-        gap: 0;
-    }
-    
-    .exp-card-spacer {
-        display: none;
-    }
-    
-    .exp-card-dot {
-        left: 12px;
-        top: 24px;
-    }
-    
-    .exp-card-content {
-        padding: 20px;
-    }
-    
-    .exp-header,
-    .exp-card:nth-child(even) .exp-header {
-        flex-direction: row;
-    }
-    
-    .exp-title-group,
-    .exp-card:nth-child(even) .exp-title-group {
-        text-align: left;
-    }
-    
-    .exp-skills,
-    .exp-card:nth-child(even) .exp-skills {
-        justify-content: flex-start;
-    }
-    
-    .exp-logo {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .exp-role {
-        font-size: 1.1rem;
-    }
-    
-    .exp-company {
-        font-size: 0.95rem;
-    }
-}
-
 /* ========================================
    COMPREHENSIVE RESPONSIVE DESIGN
    ======================================== */
@@ -8261,15 +8189,6 @@ body.dark-mode .timeline-content {
         font-size: 2.5rem;
     }
     
-    /* Experience Timeline */
-    .experience-timeline-wrapper {
-        max-width: 900px;
-    }
-    
-    .exp-card-content {
-        padding: 20px;
-    }
-    
     /* Projects Grid */
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -8309,23 +8228,6 @@ body.dark-mode .timeline-content {
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-    
-    /* Experience Timeline */
-    .experience-timeline-wrapper {
-        max-width: 100%;
-    }
-    
-    .exp-card {
-        gap: 30px;
-    }
-    
-    .exp-card-content {
-        padding: 18px;
-    }
-    
-    .exp-role {
-        font-size: 1.1rem;
     }
     
     /* Education Grid */
