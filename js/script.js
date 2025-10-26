@@ -314,7 +314,7 @@ const companiesData = [
         period: "Aug 2025 - Oct 2025",
         role: "Biotech Fellowship (Regional/Commercial Product)",
         description: "Advanced biotech training focusing on regional and commercial product strategies in the biotechnology sector.",
-        category: "product"
+        category: "current"
     },
     {
         name: "Agilent Technologies",
@@ -323,7 +323,7 @@ const companiesData = [
         period: "Sep 2024 - May 2025",
         role: "Marketing Co-op (Regional/Commercial Product)",
         description: "Leading regional and commercial product marketing strategies for analytical instruments in healthcare and life sciences markets.",
-        category: "marketing"
+        category: "product-marketing"
     },
     {
         name: "Trainity",
@@ -341,7 +341,7 @@ const companiesData = [
         period: "Feb 2024 - May 2024",
         role: "Product Strategy Consultant",
         description: "Developed comprehensive product strategies for communication technology solutions and IoT devices.",
-        category: "product"
+        category: "consulting"
     },
     {
         name: "LearnLight",
@@ -368,7 +368,7 @@ const companiesData = [
         period: "Aug 2023 - Dec 2023",
         role: "Go-to-Market Strategy",
         description: "Developed and executed go-to-market strategies for innovative dental and periodontal medical devices.",
-        category: "marketing"
+        category: "product-marketing"
     },
     {
         name: "AstraZeneca",
@@ -377,7 +377,7 @@ const companiesData = [
         period: "Oct 2023 - Dec 2023",
         role: "Competitive Intelligence Strategy Consultant",
         description: "Conducted competitive intelligence analysis for pharmaceutical products and market positioning strategies.",
-        category: "marketing"
+        category: "product-marketing"
     },
     {
         name: "Johns Hopkins Hospital",
@@ -394,7 +394,8 @@ const companiesData = [
         website: "https://www.dolphinlifesciences.com",
         period: "Jul 2021 - Aug 2023",
         role: "Global Product Manager",
-        description: "Led global product management for life sciences and biotechnology products with focus on international market expansion."
+        description: "Led global product management for life sciences and biotechnology products with focus on international market expansion.",
+        category: "product-marketing"
     },
     {
         name: "Shilchar Technologies",
@@ -402,7 +403,8 @@ const companiesData = [
         website: "https://www.shilchar.com",
         period: "Sep 2020 - Jul 2021",
         role: "Product Design & Development Engineer - GMT",
-        description: "Designed and developed innovative healthcare technology products and medical device solutions."
+        description: "Designed and developed innovative healthcare technology products and medical device solutions.",
+        category: "research"
     },
     {
         name: "Rameshwar Boiler & Utility Services",
@@ -410,7 +412,8 @@ const companiesData = [
         website: "#",
         period: "Aug 2019 - Jun 2020",
         role: "Product Research - R&D",
-        description: "Conducted research and development for industrial equipment and utility systems optimization."
+        description: "Conducted research and development for industrial equipment and utility systems optimization.",
+        category: "research"
     },
     {
         name: "Indian Oil Corporation",
@@ -418,7 +421,8 @@ const companiesData = [
         website: "https://www.iocl.com",
         period: "May 2019 - Jun 2019",
         role: "Industrial Training Summer Intern",
-        description: "Gained hands-on experience in petroleum engineering and large-scale industrial operations."
+        description: "Gained hands-on experience in petroleum engineering and large-scale industrial operations.",
+        category: "research"
     },
     {
         name: "Koch-Glitsch India",
@@ -426,7 +430,8 @@ const companiesData = [
         website: "https://www.koch-glitsch.com",
         period: "May 2018 - Jul 2018",
         role: "Industrial Summer Intern",
-        description: "Worked on industrial process optimization and engineering solutions for mass transfer equipment."
+        description: "Worked on industrial process optimization and engineering solutions for mass transfer equipment.",
+        category: "consulting"
     },
     {
         name: "NSS",
@@ -434,7 +439,8 @@ const companiesData = [
         website: "https://www.nss.gov.in",
         period: "Aug 2016 - May 2017",
         role: "Volunteering",
-        description: "Participated in community service initiatives and social development programs for public welfare."
+        description: "Participated in community service initiatives and social development programs for public welfare.",
+        category: "product-marketing"
     }
 ];
 
