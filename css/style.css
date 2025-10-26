@@ -7930,29 +7930,30 @@ body.dark-mode .timeline-content {
     position: relative;
     width: 24px;
     height: 24px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border: 4px solid var(--dark-bg);
+    background: linear-gradient(135deg, #314C6F, #6384A2);
+    border: 4px solid #1F3C5C;
     border-radius: 50%;
     z-index: 10;
-    box-shadow: 0 0 0 4px rgba(40, 116, 166, 0.3);
+    box-shadow: 0 0 0 4px rgba(49, 76, 111, 0.3);
     transition: all 0.4s ease;
     cursor: pointer;
 }
 
 .exp-card-content {
     background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.08) 0%,
-        rgba(255, 255, 255, 0.03) 100%
+        #F9F4E8 0%,
+        #F4EBDE 100%
     );
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(40, 116, 166, 0.5);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(49, 76, 111, 0.2);
     border-radius: 20px;
-    padding: 28px;
+    padding: 32px;
     position: relative;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
     min-width: 0;
     max-width: 100%;
+    box-shadow: 0 8px 24px rgba(31, 60, 92, 0.12);
 }
 
 .exp-card-content::before {
@@ -7964,7 +7965,7 @@ body.dark-mode .timeline-content {
     height: 100%;
     background: linear-gradient(90deg, 
         transparent,
-        rgba(40, 116, 166, 0.1),
+        rgba(99, 132, 162, 0.15),
         transparent
     );
     transition: left 0.6s ease;
@@ -7976,29 +7977,29 @@ body.dark-mode .timeline-content {
 
 .exp-card-content:hover {
     transform: translateY(-12px) scale(1.02);
-    border-color: var(--primary-color);
+    border-color: #314C6F;
     box-shadow: 
-        0 25px 60px rgba(40, 116, 166, 0.3),
-        0 0 40px rgba(99, 132, 162, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 20px 40px rgba(31, 60, 92, 0.25),
+        0 0 0 1px rgba(49, 76, 111, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 /* Hover effect for dot when card is hovered */
 .exp-card:hover .exp-card-dot {
     transform: scale(1.5);
-    box-shadow: 0 0 0 8px rgba(40, 116, 166, 0.4),
-                0 0 30px rgba(40, 116, 166, 0.6);
+    box-shadow: 0 0 0 8px rgba(49, 76, 111, 0.3),
+                0 0 30px rgba(99, 132, 162, 0.5);
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 0 0 8px rgba(40, 116, 166, 0.4),
-                    0 0 30px rgba(40, 116, 166, 0.6);
+        box-shadow: 0 0 0 8px rgba(49, 76, 111, 0.3),
+                    0 0 30px rgba(99, 132, 162, 0.5);
     }
     50% {
-        box-shadow: 0 0 0 12px rgba(40, 116, 166, 0.3),
-                    0 0 40px rgba(40, 116, 166, 0.8);
+        box-shadow: 0 0 0 12px rgba(49, 76, 111, 0.2),
+                    0 0 40px rgba(99, 132, 162, 0.6);
     }
 }
 
@@ -8017,17 +8018,17 @@ body.dark-mode .timeline-content {
     width: 70px;
     height: 70px;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.6);
     padding: 10px;
     object-fit: contain;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(49, 76, 111, 0.15);
     transition: all 0.4s ease;
 }
 
 .exp-card-content:hover .exp-logo {
     transform: rotate(-5deg) scale(1.1);
-    box-shadow: 0 10px 30px rgba(40, 116, 166, 0.4);
-    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(49, 76, 111, 0.3);
+    border-color: #314C6F;
 }
 
 .exp-title-group {
@@ -8039,19 +8040,18 @@ body.dark-mode .timeline-content {
 }
 
 .exp-role {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-weight: 800;
-    color: #E8F0F7;
-    margin-bottom: 6px;
+    color: #1F3C5C;
+    margin-bottom: 8px;
     line-height: 1.3;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
 }
 
 .exp-company {
-    font-size: 1.05rem;
-    color: var(--secondary-color);
+    font-size: 1.1rem;
+    color: #6384A2;
     font-weight: 700;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .exp-date {
@@ -8059,23 +8059,25 @@ body.dark-mode .timeline-content {
     align-items: center;
     gap: 8px;
     font-size: 0.95rem;
-    color: rgba(232, 240, 247, 0.8);
-    margin-bottom: 14px;
-    padding: 6px 14px;
-    background: rgba(40, 116, 166, 0.15);
+    color: #314C6F;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    background: rgba(99, 132, 162, 0.15);
     border-radius: 20px;
-    border: 1px solid rgba(40, 116, 166, 0.3);
+    border: 1px solid rgba(99, 132, 162, 0.3);
+    font-weight: 600;
 }
 
 .exp-date i {
-    color: var(--primary-color);
+    color: #6384A2;
 }
 
 .exp-description {
-    color: rgba(232, 240, 247, 0.9);
-    line-height: 1.8;
-    margin-bottom: 16px;
-    font-size: 0.98rem;
+    color: #1F3C5C;
+    line-height: 1.9;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
 .exp-skills {
@@ -8090,21 +8092,45 @@ body.dark-mode .timeline-content {
 }
 
 .exp-skill-tag {
-    padding: 6px 14px;
-    background: rgba(39, 174, 96, 0.18);
-    border: 1.5px solid rgba(39, 174, 96, 0.4);
-    border-radius: 14px;
-    font-size: 0.88rem;
-    color: #4ADE80;
-    font-weight: 600;
+    padding: 8px 16px;
+    background: rgba(49, 76, 111, 0.12);
+    border: 2px solid rgba(49, 76, 111, 0.25);
+    border-radius: 16px;
+    font-size: 0.9rem;
+    color: #314C6F;
+    font-weight: 700;
     transition: all 0.3s ease;
 }
 
 .exp-skill-tag:hover {
-    background: rgba(39, 174, 96, 0.3);
-    border-color: rgba(39, 174, 96, 0.6);
+    background: rgba(49, 76, 111, 0.2);
+    border-color: #314C6F;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 4px 12px rgba(49, 76, 111, 0.2);
+}
+
+.exp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #314C6F;
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: rgba(99, 132, 162, 0.15);
+    border: 2px solid rgba(99, 132, 162, 0.3);
+    border-radius: 12px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.exp-link:hover {
+    background: rgba(49, 76, 111, 0.15);
+    border-color: #314C6F;
+    color: #1F3C5C;
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(49, 76, 111, 0.2);
 }
 
 .exp-link {
@@ -9001,170 +9027,10 @@ body.dark-mode .timeline-content {
 
 
 /* ========================================
-   EXPERIENCE SECTION - ENHANCED VISIBILITY & CONTRAST
+   EXPERIENCE SECTION - LIGHT THEME WITH DARK TEXT
    ======================================== */
 
-/* Force visible text colors with high contrast */
-.exp-role {
-    font-size: 1.4rem !important;
-    font-weight: 900 !important;
-    color: #FFFFFF !important;
-    margin-bottom: 8px !important;
-    line-height: 1.3 !important;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
-    letter-spacing: 0.3px !important;
-}
-
-.exp-company {
-    font-size: 1.1rem !important;
-    color: #27AE60 !important;
-    font-weight: 700 !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
-}
-
-.exp-date {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    font-size: 0.95rem !important;
-    color: #D1E8FF !important;
-    margin-bottom: 14px !important;
-    padding: 8px 16px !important;
-    background: rgba(40, 116, 166, 0.25) !important;
-    border-radius: 20px !important;
-    border: 2px solid rgba(40, 116, 166, 0.5) !important;
-    font-weight: 600 !important;
-}
-
-.exp-date i {
-    color: #2874A6 !important;
-    font-size: 1rem !important;
-}
-
-.exp-description {
-    color: #E8F4F8 !important;
-    line-height: 1.9 !important;
-    margin-bottom: 16px !important;
-    font-size: 1rem !important;
-    font-weight: 400 !important;
-}
-
-/* Enhanced card background for better contrast */
-.exp-card-content {
-    background: linear-gradient(135deg, 
-        rgba(20, 30, 48, 0.95) 0%,
-        rgba(30, 40, 60, 0.95) 100%
-    ) !important;
-    backdrop-filter: blur(20px) !important;
-    border: 3px solid rgba(40, 116, 166, 0.6) !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
-}
-
-.exp-card-content:hover {
-    transform: translateY(-15px) scale(1.03) !important;
-    border-color: #2874A6 !important;
-    box-shadow: 
-        0 30px 70px rgba(40, 116, 166, 0.4),
-        0 0 50px rgba(99, 132, 162, 0.3),
-        inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-}
-
-/* Timeline line with glow */
-.experience-timeline-line {
-    width: 5px !important;
-    background: linear-gradient(180deg, 
-        transparent 0%,
-        #2874A6 10%,
-        #27AE60 50%,
-        #2874A6 90%,
-        transparent 100%
-    ) !important;
-    box-shadow: 0 0 30px rgba(40, 116, 166, 0.6) !important;
-}
-
-/* Timeline dot enhancement */
-.exp-card-dot {
-    width: 24px !important;
-    height: 24px !important;
-    background: linear-gradient(135deg, #2874A6, #27AE60) !important;
-    border: 5px solid #0D1B2A !important;
-    box-shadow: 0 0 0 4px rgba(40, 116, 166, 0.4),
-                0 0 20px rgba(40, 116, 166, 0.6) !important;
-}
-
-.exp-card-content:hover ~ .exp-card-spacer .exp-card-dot,
-.exp-card-dot:hover {
-    transform: scale(1.6) !important;
-    box-shadow: 0 0 0 10px rgba(40, 116, 166, 0.5),
-                0 0 40px rgba(40, 116, 166, 0.8) !important;
-}
-
-/* Logo enhancement */
-.exp-logo {
-    background: rgba(255, 255, 255, 0.15) !important;
-    border: 2px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-.exp-card-content:hover .exp-logo {
-    transform: rotate(-8deg) scale(1.15) !important;
-    box-shadow: 0 15px 40px rgba(40, 116, 166, 0.5) !important;
-    border-color: #2874A6 !important;
-}
-
-/* Skills tags with better visibility */
-.exp-skill-tag {
-    padding: 7px 16px !important;
-    background: rgba(39, 174, 96, 0.25) !important;
-    border: 2px solid rgba(39, 174, 96, 0.5) !important;
-    color: #5DFDCB !important;
-    font-weight: 700 !important;
-    font-size: 0.9rem !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-}
-
-.exp-skill-tag:hover {
-    background: rgba(39, 174, 96, 0.4) !important;
-    border-color: #27AE60 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4) !important;
-}
-
-/* Visit company link */
-.exp-link {
-    color: #5DADE2 !important;
-    background: rgba(40, 116, 166, 0.2) !important;
-    border: 2px solid rgba(40, 116, 166, 0.4) !important;
-    font-weight: 700 !important;
-    padding: 10px 20px !important;
-}
-
-.exp-link:hover {
-    background: rgba(40, 116, 166, 0.35) !important;
-    border-color: #2874A6 !important;
-    color: #FFFFFF !important;
-    transform: translateX(8px) !important;
-    box-shadow: 0 6px 20px rgba(40, 116, 166, 0.4) !important;
-}
-
-/* Add shimmer effect on card hover */
-.exp-card-content::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -200%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-        transparent,
-        rgba(40, 116, 166, 0.2),
-        transparent
-    );
-    transition: left 0.8s ease;
-}
-
-.exp-card-content:hover::after {
-    left: 200%;
-}
+/* No overrides needed - using base styles with light background and dark text */
 
 /* Ensure alternating layout is clear - Connecting lines from dot to card */
 .exp-card-dot-wrapper::after {
@@ -9173,7 +9039,7 @@ body.dark-mode .timeline-content {
     top: 42px;
     width: 25px;
     height: 3px;
-    background: rgba(40, 116, 166, 0.5);
+    background: rgba(49, 76, 111, 0.3);
     z-index: 2;
 }
 
