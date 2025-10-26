@@ -313,7 +313,8 @@ const companiesData = [
         website: "https://www.nopatientleftbehind.org",
         period: "Aug 2025 - Oct 2025",
         role: "Biotech Fellowship (Regional/Commercial Product)",
-        description: "Advanced biotech training focusing on regional and commercial product strategies in the biotechnology sector."
+        description: "Advanced biotech training focusing on regional and commercial product strategies in the biotechnology sector.",
+        category: "product"
     },
     {
         name: "Agilent Technologies",
@@ -321,7 +322,8 @@ const companiesData = [
         website: "https://www.agilent.com",
         period: "Sep 2024 - May 2025",
         role: "Marketing Co-op (Regional/Commercial Product)",
-        description: "Leading regional and commercial product marketing strategies for analytical instruments in healthcare and life sciences markets."
+        description: "Leading regional and commercial product marketing strategies for analytical instruments in healthcare and life sciences markets.",
+        category: "marketing"
     },
     {
         name: "Trainity",
@@ -329,7 +331,8 @@ const companiesData = [
         website: "https://www.trainity.com",
         period: "Jun 2024 - Aug 2024",
         role: "Data Analyst Bootcamp",
-        description: "Intensive data analytics training program focused on data-driven decision making and business intelligence."
+        description: "Intensive data analytics training program focused on data-driven decision making and business intelligence.",
+        category: "consulting"
     },
     {
         name: "Motorola Solutions",
@@ -337,7 +340,8 @@ const companiesData = [
         website: "https://www.motorolasolutions.com",
         period: "Feb 2024 - May 2024",
         role: "Product Strategy Consultant",
-        description: "Developed comprehensive product strategies for communication technology solutions and IoT devices."
+        description: "Developed comprehensive product strategies for communication technology solutions and IoT devices.",
+        category: "product"
     },
     {
         name: "LearnLight",
@@ -345,7 +349,8 @@ const companiesData = [
         website: "https://www.learnlight.com",
         period: "Jan 2024 - May 2024",
         role: "User Strategy Consultant",
-        description: "Consulted on user experience strategies and customer journey optimization for educational technology platforms."
+        description: "Consulted on user experience strategies and customer journey optimization for educational technology platforms.",
+        category: "consulting"
     },
     {
         name: "International Iberian Nanotechnology Laboratory",
@@ -353,7 +358,8 @@ const companiesData = [
         website: "https://www.inl.int",
         period: "Nov 2023 - May 2024",
         role: "Global Strategy Consultant",
-        description: "Provided strategic consulting for global expansion and innovation in nanotechnology research and applications."
+        description: "Provided strategic consulting for global expansion and innovation in nanotechnology research and applications.",
+        category: "consulting"
     },
     {
         name: "Periofill",
@@ -361,7 +367,8 @@ const companiesData = [
         website: "https://www.periofill.com",
         period: "Aug 2023 - Dec 2023",
         role: "Go-to-Market Strategy",
-        description: "Developed and executed go-to-market strategies for innovative dental and periodontal medical devices."
+        description: "Developed and executed go-to-market strategies for innovative dental and periodontal medical devices.",
+        category: "marketing"
     },
     {
         name: "AstraZeneca",
@@ -369,7 +376,8 @@ const companiesData = [
         website: "https://www.astrazeneca.com",
         period: "Oct 2023 - Dec 2023",
         role: "Competitive Intelligence Strategy Consultant",
-        description: "Conducted competitive intelligence analysis for pharmaceutical products and market positioning strategies."
+        description: "Conducted competitive intelligence analysis for pharmaceutical products and market positioning strategies.",
+        category: "marketing"
     },
     {
         name: "Johns Hopkins Hospital",
@@ -377,7 +385,8 @@ const companiesData = [
         website: "https://www.hopkinshospital.org",
         period: "Aug 2023 - Oct 2023",
         role: "Healthcare/Hospital Strategy Consultant",
-        description: "Developed strategic initiatives for hospital operations and healthcare service delivery optimization."
+        description: "Developed strategic initiatives for hospital operations and healthcare service delivery optimization.",
+        category: "consulting"
     },
     {
         name: "Dolphin Lifescience India",
@@ -993,7 +1002,46 @@ function loadExperience() {
             `;
         }
         
+        // Add category data attribute for filtering
+        card.setAttribute('data-category', company.category);
+        
         container.appendChild(card);
+    });
+    
+    // Initialize filter functionality
+    initializeExperienceFilters();
+}
+
+// ===== EXPERIENCE FILTER FUNCTIONALITY =====
+function initializeExperienceFilters() {
+    const filterButtons = document.querySelectorAll('.experience-filter-btn');
+    const experienceCards = document.querySelectorAll('.exp-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Filter cards with animation
+            experienceCards.forEach((card, index) => {
+                const category = card.getAttribute('data-category');
+                
+                if (filter === 'all' || category === filter) {
+                    setTimeout(() => {
+                        card.style.display = 'grid';
+                        card.style.animation = 'none';
+                        setTimeout(() => {
+                            card.style.animation = '';
+                        }, 10);
+                    }, index * 50);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     });
 }
 
