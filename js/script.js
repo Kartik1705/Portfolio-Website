@@ -317,6 +317,15 @@ const companiesData = [
         category: "current"
     },
     {
+        name: "No Patient Left Behind",
+        logo: "NPLB.png",
+        website: "https://www.nopatientleftbehind.org",
+        period: "Aug 2025 - Oct 2025",
+        role: "Biotech Fellowship (Regional/Commercial Product)",
+        description: "Advanced biotech training focusing on regional and commercial product strategies in the biotechnology sector.",
+        category: "product-marketing"
+    },
+    {
         name: "Agilent Technologies",
         logo: "AGILENT TECHNOLOGIES.png",
         website: "https://www.agilent.com",
@@ -326,13 +335,22 @@ const companiesData = [
         category: "product-marketing"
     },
     {
-        name: "Trainity",
-        logo: "TRAINITY.png",
-        website: "https://www.trainity.com",
-        period: "Jun 2024 - Aug 2024",
-        role: "Data Analyst Bootcamp",
-        description: "Intensive data analytics training program focused on data-driven decision making and business intelligence.",
-        category: "consulting"
+        name: "Dolphin Lifescience India",
+        logo: "Dolphin Lifescince India.png",
+        website: "https://www.dolphinlifesciences.com",
+        period: "Jul 2021 - Aug 2023",
+        role: "Global Product Manager",
+        description: "Led global product management for life sciences and biotechnology products with focus on international market expansion.",
+        category: "product-marketing"
+    },
+    {
+        name: "Shilchar Technologies",
+        logo: "SHILCHAR TECHNOLOGIES PVT. LTD..png",
+        website: "https://www.shilchar.com",
+        period: "Sep 2020 - Jul 2021",
+        role: "Product Design & Development Engineer - GMT",
+        description: "Designed and developed innovative healthcare technology products and medical device solutions.",
+        category: "product-marketing"
     },
     {
         name: "Motorola Solutions",
@@ -368,7 +386,7 @@ const companiesData = [
         period: "Aug 2023 - Dec 2023",
         role: "Go-to-Market Strategy",
         description: "Developed and executed go-to-market strategies for innovative dental and periodontal medical devices.",
-        category: "product-marketing"
+        category: "consulting"
     },
     {
         name: "AstraZeneca",
@@ -377,7 +395,7 @@ const companiesData = [
         period: "Oct 2023 - Dec 2023",
         role: "Competitive Intelligence Strategy Consultant",
         description: "Conducted competitive intelligence analysis for pharmaceutical products and market positioning strategies.",
-        category: "product-marketing"
+        category: "consulting"
     },
     {
         name: "Johns Hopkins Hospital",
@@ -389,21 +407,21 @@ const companiesData = [
         category: "consulting"
     },
     {
-        name: "Dolphin Lifescience India",
-        logo: "Dolphin Lifescince India.png",
-        website: "https://www.dolphinlifesciences.com",
-        period: "Jul 2021 - Aug 2023",
-        role: "Global Product Manager",
-        description: "Led global product management for life sciences and biotechnology products with focus on international market expansion.",
-        category: "product-marketing"
-    },
-    {
         name: "Shilchar Technologies",
         logo: "SHILCHAR TECHNOLOGIES PVT. LTD..png",
         website: "https://www.shilchar.com",
         period: "Sep 2020 - Jul 2021",
         role: "Product Design & Development Engineer - GMT",
         description: "Designed and developed innovative healthcare technology products and medical device solutions.",
+        category: "research"
+    },
+    {
+        name: "Trainity",
+        logo: "TRAINITY.png",
+        website: "https://www.trainity.com",
+        period: "Jun 2024 - Aug 2024",
+        role: "Data Analyst Bootcamp",
+        description: "Intensive data analytics training program focused on data-driven decision making and business intelligence.",
         category: "research"
     },
     {
@@ -431,7 +449,7 @@ const companiesData = [
         period: "May 2018 - Jul 2018",
         role: "Industrial Summer Intern",
         description: "Worked on industrial process optimization and engineering solutions for mass transfer equipment.",
-        category: "consulting"
+        category: "research"
     },
     {
         name: "NSS",
@@ -440,7 +458,7 @@ const companiesData = [
         period: "Aug 2016 - May 2017",
         role: "Volunteering",
         description: "Participated in community service initiatives and social development programs for public welfare.",
-        category: "product-marketing"
+        category: "volunteering"
     }
 ];
 
