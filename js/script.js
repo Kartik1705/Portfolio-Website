@@ -317,15 +317,6 @@ const companiesData = [
         category: "current"
     },
     {
-        name: "No Patient Left Behind",
-        logo: "NPLB.png",
-        website: "https://www.nopatientleftbehind.org",
-        period: "Aug 2025 - Oct 2025",
-        role: "Biotech Fellowship (Regional/Commercial Product)",
-        description: "Advanced biotech training focusing on regional and commercial product strategies in the biotechnology sector.",
-        category: "product-marketing"
-    },
-    {
         name: "Agilent Technologies",
         logo: "AGILENT TECHNOLOGIES.png",
         website: "https://www.agilent.com",
@@ -1665,30 +1656,6 @@ function initAboutImageRotation() {
     
     // Rotate every 3 seconds
     setInterval(rotateImages, 3000);
-}
-    captionText.style.transition = 'opacity 0.3s ease';
-    
-    // Rotate every 3 seconds
-    setInterval(rotateImages, 3000);
-    
-    // Add click functionality to indicators
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            images[currentIndex].classList.remove('active');
-            indicators[currentIndex].classList.remove('active');
-            
-            currentIndex = index;
-            
-            images[currentIndex].classList.add('active');
-            indicators[currentIndex].classList.add('active');
-            
-            captionText.style.opacity = '0';
-            setTimeout(() => {
-                captionText.textContent = captions[currentIndex];
-                captionText.style.opacity = '1';
-            }, 300);
-        });
-    });
 }
 
 // ===== ADVANCED MAGNETIC CURSOR WITH SMOOTH TRAIL =====

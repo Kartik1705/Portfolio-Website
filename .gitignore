@@ -1,0 +1,7 @@
+# Large media files - kept locally only
+About me/
+BIntelligent/
+Shilchar/
+
+# System files
+.DS_Store
