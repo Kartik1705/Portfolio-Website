@@ -1572,89 +1572,74 @@ function initRotatingOpportunities() {
     setInterval(rotateText, 3000);
 }
 
-// ===== ABOUT ME IMAGE ROTATION =====
+// ===== ABOUT ME IMAGE ROTATION - FIXED =====
 function initAboutImageRotation() {
-    const container = document.getElementById('about-media-container');
-    const captionText = document.getElementById('image-caption-text');
+    const container = document.getElementById('about-media-slideshow');
     
     if (!container) return;
     
-    // List all media files from About me folder
+    // All uploaded images from About me folder
     const mediaFiles = [
-        '1.JPEG', '2.JPEG', '3.jpg', '4.JPG', '5.JPG', '6.JPG', '7.JPG', 
-        '13.JPG', '14.jpg', '15.JPG', '16.JPG', '17.JPG', '19.MP4',
-        '20.JPG', '21.JPG', '22.JPG', '23.JPG', '24.JPG', '25.JPG', 
-        '26.jpg', '27.JPG', '28.JPG', '29.jpg', '31.JPEG', '32.JPG',
-        '35.jpg', '36.JPG', '37.JPG', '38.JPG', '39.jpg', '41.JPG',
-        '47.JPEG', '49.MOV', '57.JPG', '61.jpg', '62.JPG', '63.JPG', 
-        '64.jpg', '68.JPEG', '69.JPEG', '70.JPEG', '71.JPEG', '72.JPEG',
-        '74.JPG', '75.JPG', '76.JPG', '2_f.JPEG', '2_fff.JPEG', 
-        '2_fffff.JPG', '5_f.JPG', '5_ff.JPG', '7_f.JPG', '7_ff.JPG'
+        '1.JPEG', '2.JPEG', '3.jpg', '4.JPG', '5.JPG', '5_f.JPG',
+        '8.HEIF', '9.HEIF', '11.HEIC', '12.HEIF', '13.JPG', '14.jpg',
+        '16.JPG', '17.JPG', '21.JPG', '24.JPG', '25.JPG', '26.jpg',
+        '27.JPG', '28.JPG', '32.JPG', '34.HEIC', '35.jpg', '36.JPG',
+        '37.JPG', '38.JPG', '39.jpg', '40.HEIC', '42.HEIC', '43.HEIC',
+        '45.HEIC', '47.JPEG', '48.HEIC', '58.HEIC', '61.jpg', '62.JPG',
+        '63.JPG', '73.HEIC', '76.JPG', '2_f.JPEG', '2_fffff.JPG', '2_fffffff.heic'
     ];
     
-    // Create media elements
+    let currentIndex = 0;
+    let isTransitioning = false;
+    
+    // Create all image elements
     mediaFiles.forEach((file, index) => {
-        const isVideo = file.endsWith('.MP4') || file.endsWith('.MOV');
-        let mediaElement;
+        const img = document.createElement('img');
+        img.src = `About me/${file}`;
+        img.className = 'about-slide-image';
+        img.alt = 'Kartik Pandya';
+        img.style.opacity = '0';
+        img.style.position = 'absolute';
+        img.style.top = '0';
+        img.style.left = '0';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.transition = 'opacity 0.8s ease-in-out';
         
-        if (isVideo) {
-            mediaElement = document.createElement('video');
-            mediaElement.src = `About me/${file}`;
-            mediaElement.className = 'about-image';
-            mediaElement.muted = true;
-            mediaElement.loop = true;
-            mediaElement.playsInline = true;
-            mediaElement.autoplay = false;
-        } else {
-            mediaElement = document.createElement('img');
-            mediaElement.src = `About me/${file}`;
-            mediaElement.className = 'about-image';
-            mediaElement.alt = 'Kartik Pandya';
-        }
-        
+        // Show first image immediately when loaded
         if (index === 0) {
-            mediaElement.classList.add('active');
-            if (isVideo) mediaElement.play();
+            img.onload = () => {
+                img.style.opacity = '1';
+            };
         }
         
-        container.appendChild(mediaElement);
+        container.appendChild(img);
     });
     
-    const images = container.querySelectorAll('.about-image');
-    let currentIndex = 0;
+    const images = container.querySelectorAll('.about-slide-image');
     
     function rotateImages() {
-        // Pause current video if it's a video
-        const currentMedia = images[currentIndex];
-        if (currentMedia.tagName === 'VIDEO') {
-            currentMedia.pause();
-        }
+        if (isTransitioning || images.length === 0) return;
         
-        // Remove active class
-        currentMedia.classList.remove('active');
+        isTransitioning = true;
         
-        // Move to next image
-        currentIndex = (currentIndex + 1) % images.length;
+        const currentImg = images[currentIndex];
+        const nextIndex = (currentIndex + 1) % images.length;
+        const nextImg = images[nextIndex];
         
-        // Add active class and play if video
-        const nextMedia = images[currentIndex];
-        nextMedia.classList.add('active');
-        if (nextMedia.tagName === 'VIDEO') {
-            nextMedia.play();
-        }
+        // Fade out current
+        currentImg.style.opacity = '0';
         
-        // Update caption with fade effect
-        captionText.style.opacity = '0';
+        // Wait for fade out, then fade in next
         setTimeout(() => {
-            captionText.textContent = 'Life & Adventures';
-            captionText.style.opacity = '1';
-        }, 300);
+            nextImg.style.opacity = '1';
+            currentIndex = nextIndex;
+            isTransitioning = false;
+        }, 800);
     }
     
-    // Add transition to caption
-    captionText.style.transition = 'opacity 0.3s ease';
-    
-    // Rotate every 3 seconds
+    // Start rotation after 3 seconds
     setInterval(rotateImages, 3000);
 }
 
