@@ -317,6 +317,15 @@ const companiesData = [
         category: "current"
     },
     {
+        name: "No Patient Left Behind",
+        logo: "NPLB.png",
+        website: "https://www.nopatientleftbehind.org",
+        period: "Aug 2025 - Oct 2025",
+        role: "Biotech Fellowship (Regional/Commercial Product)",
+        description: "Advanced biotech training focusing on regional and commercial product strategies in the biotechnology sector.",
+        category: "product-marketing"
+    },
+    {
         name: "Agilent Technologies",
         logo: "AGILENT TECHNOLOGIES.png",
         website: "https://www.agilent.com",
@@ -1574,41 +1583,89 @@ function initRotatingOpportunities() {
 
 // ===== ABOUT ME IMAGE ROTATION =====
 function initAboutImageRotation() {
-    const images = document.querySelectorAll('.about-image');
-    const indicators = document.querySelectorAll('.indicator');
+    const container = document.getElementById('about-media-container');
     const captionText = document.getElementById('image-caption-text');
     
-    if (images.length === 0) return;
+    if (!container) return;
     
-    const captions = [
-        'Exploring new perspectives',
-        'Adventures & discoveries',
-        'Living the journey'
+    // List all media files from About me folder
+    const mediaFiles = [
+        '1.JPEG', '2.JPEG', '3.jpg', '4.JPG', '5.JPG', '6.JPG', '7.JPG', 
+        '13.JPG', '14.jpg', '15.JPG', '16.JPG', '17.JPG', '19.MP4',
+        '20.JPG', '21.JPG', '22.JPG', '23.JPG', '24.JPG', '25.JPG', 
+        '26.jpg', '27.JPG', '28.JPG', '29.jpg', '31.JPEG', '32.JPG',
+        '35.jpg', '36.JPG', '37.JPG', '38.JPG', '39.jpg', '41.JPG',
+        '47.JPEG', '49.MOV', '57.JPG', '61.jpg', '62.JPG', '63.JPG', 
+        '64.jpg', '68.JPEG', '69.JPEG', '70.JPEG', '71.JPEG', '72.JPEG',
+        '74.JPG', '75.JPG', '76.JPG', '2_f.JPEG', '2_fff.JPEG', 
+        '2_fffff.JPG', '5_f.JPG', '5_ff.JPG', '7_f.JPG', '7_ff.JPG'
     ];
     
+    // Create media elements
+    mediaFiles.forEach((file, index) => {
+        const isVideo = file.endsWith('.MP4') || file.endsWith('.MOV');
+        let mediaElement;
+        
+        if (isVideo) {
+            mediaElement = document.createElement('video');
+            mediaElement.src = `About me/${file}`;
+            mediaElement.className = 'about-image';
+            mediaElement.muted = true;
+            mediaElement.loop = true;
+            mediaElement.playsInline = true;
+            mediaElement.autoplay = false;
+        } else {
+            mediaElement = document.createElement('img');
+            mediaElement.src = `About me/${file}`;
+            mediaElement.className = 'about-image';
+            mediaElement.alt = 'Kartik Pandya';
+        }
+        
+        if (index === 0) {
+            mediaElement.classList.add('active');
+            if (isVideo) mediaElement.play();
+        }
+        
+        container.appendChild(mediaElement);
+    });
+    
+    const images = container.querySelectorAll('.about-image');
     let currentIndex = 0;
     
     function rotateImages() {
-        // Remove active class from current image and indicator
-        images[currentIndex].classList.remove('active');
-        indicators[currentIndex].classList.remove('active');
+        // Pause current video if it's a video
+        const currentMedia = images[currentIndex];
+        if (currentMedia.tagName === 'VIDEO') {
+            currentMedia.pause();
+        }
+        
+        // Remove active class
+        currentMedia.classList.remove('active');
         
         // Move to next image
         currentIndex = (currentIndex + 1) % images.length;
         
-        // Add active class to new image and indicator
-        images[currentIndex].classList.add('active');
-        indicators[currentIndex].classList.add('active');
+        // Add active class and play if video
+        const nextMedia = images[currentIndex];
+        nextMedia.classList.add('active');
+        if (nextMedia.tagName === 'VIDEO') {
+            nextMedia.play();
+        }
         
         // Update caption with fade effect
         captionText.style.opacity = '0';
         setTimeout(() => {
-            captionText.textContent = captions[currentIndex];
+            captionText.textContent = 'Life & Adventures';
             captionText.style.opacity = '1';
         }, 300);
     }
     
     // Add transition to caption
+    captionText.style.transition = 'opacity 0.3s ease';
+    
+    // Rotate every 3 seconds
+    setInterval(rotateImages, 3000);
+}
     captionText.style.transition = 'opacity 0.3s ease';
     
     // Rotate every 3 seconds
