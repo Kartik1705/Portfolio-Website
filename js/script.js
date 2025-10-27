@@ -317,15 +317,6 @@ const companiesData = [
         category: "current"
     },
     {
-        name: "No Patient Left Behind",
-        logo: "NPLB.png",
-        website: "https://www.nopatientleftbehind.org",
-        period: "Aug 2025 - Oct 2025",
-        role: "Biotech Fellowship (Regional/Commercial Product)",
-        description: "Advanced biotech training focusing on regional and commercial product strategies in the biotechnology sector.",
-        category: "product-marketing"
-    },
-    {
         name: "Agilent Technologies",
         logo: "AGILENT TECHNOLOGIES.png",
         website: "https://www.agilent.com",
