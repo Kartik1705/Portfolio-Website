@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Create circular favicon from profile picture with face focus
+Create circular favicon with dark blue border like LinkedIn profile picture
 """
 from PIL import Image, ImageDraw
 import os
@@ -10,8 +10,8 @@ input_image = "assets/images/profile.jpg"
 output_ico = "favicon.ico"
 output_png = "assets/images/favicon.png"
 
-def create_circular_thumbnail(img, size):
-    """Create a circular thumbnail focused on the center/face"""
+def create_linkedin_style_favicon(img, size):
+    """Create a circular favicon with dark blue border like LinkedIn"""
     # Convert to RGB
     if img.mode != 'RGB':
         img = img.convert('RGB')
@@ -19,13 +19,11 @@ def create_circular_thumbnail(img, size):
     # Get dimensions
     width, height = img.size
     
-    # Crop to focus on upper-center (where face usually is in portraits)
-    # Take a square from the center-top area
+    # Crop to focus on upper-center (where face usually is)
     crop_size = min(width, height)
     
-    # Adjust crop to focus more on upper portion (face area)
+    # Focus on face area (upper portion)
     left = (width - crop_size) // 2
-    # Move top up by 15% to focus on face instead of full body
     top = max(0, int((height - crop_size) * 0.15))
     right = left + crop_size
     bottom = top + crop_size
@@ -40,38 +38,64 @@ def create_circular_thumbnail(img, size):
     # Resize to target size with high-quality resampling
     img_resized = img_cropped.resize((size, size), Image.Resampling.LANCZOS)
     
-    # Create circular mask
-    mask = Image.new('L', (size, size), 0)
+    # Create output image with dark blue border (like your website theme)
+    # Dark blue color from your website: #0D1B2A or #314C6F
+    border_color = (13, 27, 42)  # #0D1B2A - dark navy blue
+    border_width = max(2, int(size * 0.08))  # 8% border width
+    
+    # Calculate inner circle size
+    inner_size = size - (border_width * 2)
+    
+    # Create base image with dark blue background
+    output = Image.new('RGB', (size, size), border_color)
+    
+    # Create circular mask for the photo
+    mask = Image.new('L', (inner_size, inner_size), 0)
     draw = ImageDraw.Draw(mask)
-    draw.ellipse((0, 0, size, size), fill=255)
+    draw.ellipse((0, 0, inner_size, inner_size), fill=255)
     
-    # Create output image with transparency
-    output = Image.new('RGBA', (size, size), (0, 0, 0, 0))
-    output.paste(img_resized, (0, 0))
-    output.putalpha(mask)
+    # Resize photo to fit inside the border
+    photo_resized = img_resized.resize((inner_size, inner_size), Image.Resampling.LANCZOS)
     
-    return output
+    # Create circular photo with transparency
+    circular_photo = Image.new('RGBA', (inner_size, inner_size), (0, 0, 0, 0))
+    circular_photo.paste(photo_resized, (0, 0))
+    circular_photo.putalpha(mask)
+    
+    # Paste circular photo onto the dark blue background
+    output.paste(circular_photo, (border_width, border_width), circular_photo)
+    
+    # Create outer circular mask to make the entire favicon circular
+    outer_mask = Image.new('L', (size, size), 0)
+    outer_draw = ImageDraw.Draw(outer_mask)
+    outer_draw.ellipse((0, 0, size, size), fill=255)
+    
+    # Apply outer mask
+    final_output = Image.new('RGBA', (size, size), (0, 0, 0, 0))
+    final_output.paste(output, (0, 0))
+    final_output.putalpha(outer_mask)
+    
+    return final_output
 
 try:
     # Open the profile image
     img = Image.open(input_image)
     print(f"Original image size: {img.size}")
     
-    # Create circular favicon in multiple sizes
-    print("\nCreating circular favicons...")
+    print("\nCreating LinkedIn-style circular favicon with dark blue border...")
     
-    # Create high-quality PNG (256x256)
-    favicon_256 = create_circular_thumbnail(img, 256)
+    # Create high-quality PNG (256x256) with transparency
+    favicon_256 = create_linkedin_style_favicon(img, 256)
     favicon_256.save(output_png, format='PNG', optimize=True)
-    print(f"✓ Created {output_png} (256x256, circular)")
+    print(f"✓ Created {output_png} (256x256, circular with dark blue border)")
     
-    # Create ICO with multiple sizes (for better browser support)
+    # Create ICO with multiple sizes
     icon_sizes = [16, 32, 48, 64]
     favicon_images = []
     
     for size in icon_sizes:
-        circular_img = create_circular_thumbnail(img, size)
-        # Convert back to RGB for ICO format (with white background)
+        circular_img = create_linkedin_style_favicon(img, size)
+        # Convert to RGB with white background for ICO
         rgb_img = Image.new('RGB', (size, size), (255, 255, 255))
         rgb_img.paste(circular_img, (0, 0), circular_img)
         favicon_images.append(rgb_img)
@@ -83,11 +107,13 @@ try:
         sizes=[(s, s) for s in icon_sizes],
         append_images=favicon_images[1:]
     )
-    print(f"✓ Created {output_ico} (multi-size, circular)")
+    print(f"✓ Created {output_ico} (multi-size, circular with dark blue border)")
     
-    print("\n✅ Circular favicon files created successfully!")
-    print("  - favicon.ico (root directory) - circular with face focus")
-    print("  - assets/images/favicon.png - circular with transparent background")
+    print("\n✅ LinkedIn-style circular favicon created successfully!")
+    print("  - Dark blue border (#0D1B2A)")
+    print("  - Perfectly circular shape")
+    print("  - Face-focused crop")
+    print("  - Matches your website theme")
     
 except Exception as e:
     print(f"✗ Error: {e}")
