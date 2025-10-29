@@ -655,33 +655,11 @@ img.loaded {
 
 .testimonial-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 25px 40px;
     background: linear-gradient(135deg, var(--navy-primary), var(--blue-secondary));
     border-bottom: 3px solid rgba(255, 255, 255, 0.1);
-}
-
-.linkedin-badge {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: white;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.linkedin-badge i {
-    font-size: 1.2rem;
-    color: #0077B5;
-    background: white;
-    padding: 4px;
-    border-radius: 4px;
 }
 
 .recommendation-date {
@@ -690,6 +668,7 @@ img.loaded {
     gap: 8px;
     color: rgba(255, 255, 255, 0.9);
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .recommendation-date i {
@@ -755,6 +734,24 @@ img.loaded {
     z-index: 2;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 8px 25px rgba(49, 76, 111, 0.25);
+    overflow: hidden;
+}
+
+.author-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.author-avatar-fallback {
+    display: none;
+    position: relative;
+    z-index: 0;
 }
 
 .avatar-hover-ring {
