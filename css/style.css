@@ -2113,18 +2113,19 @@ button {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
+    grid-template-columns: 45% 55%;
+    gap: 50px;
+    align-items: stretch;
     margin-top: 60px;
     position: relative;
 }
 
-/* Text Content - Left Side */
+/* Text Content - Right Side */
 .about-text-container {
     display: flex;
     flex-direction: column;
     gap: 35px;
+    min-height: 600px;
 }
 
 .about-intro,
@@ -2327,6 +2328,7 @@ button {
     font-weight: 600;
     color: var(--cream-light);
     letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
 }
 
 /* Image Indicators */
@@ -9253,12 +9255,9 @@ body.dark-mode .timeline-content {
 /* Story Card Styling */
 .about-story-card {
     position: relative;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.9) 0%,
-        rgba(249, 244, 232, 0.95) 100%
-    );
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
-    padding: 40px;
+    padding: 45px;
     border-radius: 25px;
     border: 2px solid rgba(99, 132, 162, 0.2);
     box-shadow: 
@@ -9266,6 +9265,10 @@ body.dark-mode .timeline-content {
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: fadeInUp 0.8s ease-out 0.3s backwards;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-story-card:hover {
@@ -9294,32 +9297,12 @@ body.dark-mode .timeline-content {
 
 /* Story Text */
 .about-story-text {
-    font-size: 1.1rem;
+    font-size: 1.08rem;
     line-height: 1.9;
-    color: var(--text-dark);
+    color: #2C3E50;
     text-align: justify;
     margin: 0;
-}
-
-/* Highlighted Text */
-.text-highlight {
-    color: var(--navy-primary);
-    font-weight: 700;
-    position: relative;
-    padding: 0 2px;
-    background: linear-gradient(180deg, 
-        transparent 60%,
-        rgba(99, 132, 162, 0.2) 60%
-    );
-    transition: all 0.3s ease;
-}
-
-.text-highlight:hover {
-    background: linear-gradient(180deg, 
-        transparent 50%,
-        rgba(99, 132, 162, 0.35) 50%
-    );
-    color: var(--navy-dark);
+    font-weight: 400;
 }
 
 /* Personal Interest Badges */
