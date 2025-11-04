@@ -313,8 +313,7 @@ const companiesData = [
         website: "https://www.nopatientleftbehind.org",
         period: "Aug 2025 - Oct 2025",
         role: "Biotech Fellowship (Regional/Commercial Product)",
-        description: "Advanced biotech training focusing on regional and commercial product strategies in the biotechnology sector.",
-        category: "current"
+        description: "Advanced biotech training focusing on regional and commercial product strategies in the biotechnology sector."
     },
     {
         name: "Agilent Technologies",
@@ -322,89 +321,7 @@ const companiesData = [
         website: "https://www.agilent.com",
         period: "Sep 2024 - May 2025",
         role: "Marketing Co-op (Regional/Commercial Product)",
-        description: "Leading regional and commercial product marketing strategies for analytical instruments in healthcare and life sciences markets.",
-        category: "product-marketing"
-    },
-    {
-        name: "Dolphin Lifescience India",
-        logo: "Dolphin Lifescince India.png",
-        website: "https://www.dolphinlifesciences.com",
-        period: "Jul 2021 - Aug 2023",
-        role: "Global Product Manager",
-        description: "Led global product management for life sciences and biotechnology products with focus on international market expansion.",
-        category: "product-marketing"
-    },
-    {
-        name: "Shilchar Technologies",
-        logo: "SHILCHAR TECHNOLOGIES PVT. LTD..png",
-        website: "https://www.shilchar.com",
-        period: "Sep 2020 - Jul 2021",
-        role: "Product Design & Development Engineer - GMT",
-        description: "Designed and developed innovative healthcare technology products and medical device solutions.",
-        category: "product-marketing"
-    },
-    {
-        name: "Motorola Solutions",
-        logo: "MOTOROLA SOLUTIONS.png",
-        website: "https://www.motorolasolutions.com",
-        period: "Feb 2024 - May 2024",
-        role: "Product Strategy Consultant",
-        description: "Developed comprehensive product strategies for communication technology solutions and IoT devices.",
-        category: "consulting"
-    },
-    {
-        name: "LearnLight",
-        logo: "LEARNLIGHT.png",
-        website: "https://www.learnlight.com",
-        period: "Jan 2024 - May 2024",
-        role: "User Strategy Consultant",
-        description: "Consulted on user experience strategies and customer journey optimization for educational technology platforms.",
-        category: "consulting"
-    },
-    {
-        name: "International Iberian Nanotechnology Laboratory",
-        logo: "INL.png",
-        website: "https://www.inl.int",
-        period: "Nov 2023 - May 2024",
-        role: "Global Strategy Consultant",
-        description: "Provided strategic consulting for global expansion and innovation in nanotechnology research and applications.",
-        category: "consulting"
-    },
-    {
-        name: "Periofill",
-        logo: "PERIOFILL.png",
-        website: "https://www.periofill.com",
-        period: "Aug 2023 - Dec 2023",
-        role: "Go-to-Market Strategy",
-        description: "Developed and executed go-to-market strategies for innovative dental and periodontal medical devices.",
-        category: "consulting"
-    },
-    {
-        name: "AstraZeneca",
-        logo: "ASTRAZENECA.png",
-        website: "https://www.astrazeneca.com",
-        period: "Oct 2023 - Dec 2023",
-        role: "Competitive Intelligence Strategy Consultant",
-        description: "Conducted competitive intelligence analysis for pharmaceutical products and market positioning strategies.",
-        category: "consulting"
-    },
-    {
-        name: "Johns Hopkins Hospital",
-        logo: "JHH.jpeg",
-        website: "https://www.hopkinshospital.org",
-        period: "Aug 2023 - Oct 2023",
-        role: "Healthcare/Hospital Strategy Consultant",
-        description: "Developed strategic initiatives for hospital operations and healthcare service delivery optimization.",
-        category: "consulting"
-    },
-    {
-        name: "Shilchar Technologies",
-        logo: "SHILCHAR TECHNOLOGIES PVT. LTD..png",
-        website: "https://www.shilchar.com",
-        period: "Sep 2020 - Jul 2021",
-        role: "Product Design & Development Engineer - GMT",
-        description: "Designed and developed innovative healthcare technology products and medical device solutions.",
-        category: "research"
+        description: "Leading regional and commercial product marketing strategies for analytical instruments in healthcare and life sciences markets."
     },
     {
         name: "Trainity",
@@ -412,8 +329,71 @@ const companiesData = [
         website: "https://www.trainity.com",
         period: "Jun 2024 - Aug 2024",
         role: "Data Analyst Bootcamp",
-        description: "Intensive data analytics training program focused on data-driven decision making and business intelligence.",
-        category: "research"
+        description: "Intensive data analytics training program focused on data-driven decision making and business intelligence."
+    },
+    {
+        name: "Motorola Solutions",
+        logo: "MOTOROLA SOLUTIONS.png",
+        website: "https://www.motorolasolutions.com",
+        period: "Feb 2024 - May 2024",
+        role: "Product Strategy Consultant",
+        description: "Developed comprehensive product strategies for communication technology solutions and IoT devices."
+    },
+    {
+        name: "LearnLight",
+        logo: "LEARNLIGHT.png",
+        website: "https://www.learnlight.com",
+        period: "Jan 2024 - May 2024",
+        role: "User Strategy Consultant",
+        description: "Consulted on user experience strategies and customer journey optimization for educational technology platforms."
+    },
+    {
+        name: "International Iberian Nanotechnology Laboratory",
+        logo: "INL.png",
+        website: "https://www.inl.int",
+        period: "Nov 2023 - May 2024",
+        role: "Global Strategy Consultant",
+        description: "Provided strategic consulting for global expansion and innovation in nanotechnology research and applications."
+    },
+    {
+        name: "Periofill",
+        logo: "PERIOFILL.png",
+        website: "https://www.periofill.com",
+        period: "Aug 2023 - Dec 2023",
+        role: "Go-to-Market Strategy",
+        description: "Developed and executed go-to-market strategies for innovative dental and periodontal medical devices."
+    },
+    {
+        name: "AstraZeneca",
+        logo: "ASTRAZENECA.png",
+        website: "https://www.astrazeneca.com",
+        period: "Oct 2023 - Dec 2023",
+        role: "Competitive Intelligence Strategy Consultant",
+        description: "Conducted competitive intelligence analysis for pharmaceutical products and market positioning strategies."
+    },
+    {
+        name: "Johns Hopkins Hospital",
+        logo: "JHH.jpeg",
+        website: "https://www.hopkinshospital.org",
+        period: "Aug 2023 - Oct 2023",
+        role: "Healthcare/Hospital Strategy Consultant",
+        description: "Developed strategic initiatives for hospital operations and healthcare service delivery optimization."
+    },
+    {
+        name: "Dolphin Lifescience India",
+        logo: "Dolphin Lifescince India.png",
+        website: "https://www.dolphinlifesciences.com",
+        period: "Jul 2021 - Aug 2023",
+        role: "Global Product Manager",
+        description: "Led global product management for life sciences and biotechnology products with focus on international market expansion."
+    },
+    {
+        name: "Shilchar Technologies",
+        logo: "SHILCHAR TECHNOLOGIES PVT. LTD..png",
+        website: "https://www.shilchar.com",
+        period: "Sep 2020 - Jul 2021",
+        role: "Product Design & Development Engineer - GMT",
+        description: "Designed and developed innovative healthcare technology products and medical device solutions."
     },
     {
         name: "Rameshwar Boiler & Utility Services",
@@ -421,8 +401,7 @@ const companiesData = [
         website: "#",
         period: "Aug 2019 - Jun 2020",
         role: "Product Research - R&D",
-        description: "Conducted research and development for industrial equipment and utility systems optimization.",
-        category: "research"
+        description: "Conducted research and development for industrial equipment and utility systems optimization."
     },
     {
         name: "Indian Oil Corporation",
@@ -430,8 +409,7 @@ const companiesData = [
         website: "https://www.iocl.com",
         period: "May 2019 - Jun 2019",
         role: "Industrial Training Summer Intern",
-        description: "Gained hands-on experience in petroleum engineering and large-scale industrial operations.",
-        category: "research"
+        description: "Gained hands-on experience in petroleum engineering and large-scale industrial operations."
     },
     {
         name: "Koch-Glitsch India",
@@ -439,8 +417,7 @@ const companiesData = [
         website: "https://www.koch-glitsch.com",
         period: "May 2018 - Jul 2018",
         role: "Industrial Summer Intern",
-        description: "Worked on industrial process optimization and engineering solutions for mass transfer equipment.",
-        category: "research"
+        description: "Worked on industrial process optimization and engineering solutions for mass transfer equipment."
     },
     {
         name: "NSS",
@@ -448,8 +425,7 @@ const companiesData = [
         website: "https://www.nss.gov.in",
         period: "Aug 2016 - May 2017",
         role: "Volunteering",
-        description: "Participated in community service initiatives and social development programs for public welfare.",
-        category: "volunteering"
+        description: "Participated in community service initiatives and social development programs for public welfare."
     }
 ];
 
@@ -946,117 +922,38 @@ function loadExperience() {
             skills.push('Strategic Planning', 'Business Analysis');
         }
         
-        // Determine if this card is odd (right side) or even (left side)
-        const isOdd = (index + 1) % 2 !== 0;
-        
-        if (isOdd) {
-            // Odd cards: empty left, dot center, content right
-            card.innerHTML = `
-                <div class="exp-card-spacer"></div>
-                <div class="exp-card-dot-wrapper">
-                    <div class="exp-card-dot"></div>
-                </div>
-                <div class="exp-card-content">
-                    <div class="exp-header">
-                        <img src="assets/images/companies/${company.logo}" alt="${company.name}" class="exp-logo" onerror="this.style.display='none'">
-                        <div class="exp-title-group">
-                            <h3 class="exp-role">${company.role}</h3>
-                            <p class="exp-company">${company.name}</p>
-                        </div>
+        card.innerHTML = `
+            <div class="exp-card-spacer"></div>
+            <div class="exp-card-content">
+                <div class="exp-card-dot"></div>
+                <div class="exp-header">
+                    <img src="assets/images/companies/${company.logo}" alt="${company.name}" class="exp-logo" onerror="this.style.display='none'">
+                    <div class="exp-title-group">
+                        <h3 class="exp-role">${company.role}</h3>
+                        <p class="exp-company">${company.name}</p>
                     </div>
-                    <div class="exp-date">
-                        <i class="far fa-calendar-alt"></i>
-                        ${company.period}
-                    </div>
-                    <p class="exp-description">${company.description}</p>
-                    ${skills.length > 0 ? `
-                        <div class="exp-skills">
-                            ${skills.map(skill => `<span class="exp-skill-tag">${skill}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                    ${company.website && company.website !== '#' ? `
-                        <a href="${company.website}" target="_blank" class="exp-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            Visit Company
-                        </a>
-                    ` : ''}
                 </div>
-            `;
-        } else {
-            // Even cards: content left, dot center, empty right
-            card.innerHTML = `
-                <div class="exp-card-content">
-                    <div class="exp-header">
-                        <img src="assets/images/companies/${company.logo}" alt="${company.name}" class="exp-logo" onerror="this.style.display='none'">
-                        <div class="exp-title-group">
-                            <h3 class="exp-role">${company.role}</h3>
-                            <p class="exp-company">${company.name}</p>
-                        </div>
-                    </div>
-                    <div class="exp-date">
-                        <i class="far fa-calendar-alt"></i>
-                        ${company.period}
-                    </div>
-                    <p class="exp-description">${company.description}</p>
-                    ${skills.length > 0 ? `
-                        <div class="exp-skills">
-                            ${skills.map(skill => `<span class="exp-skill-tag">${skill}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                    ${company.website && company.website !== '#' ? `
-                        <a href="${company.website}" target="_blank" class="exp-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            Visit Company
-                        </a>
-                    ` : ''}
+                <div class="exp-date">
+                    <i class="far fa-calendar-alt"></i>
+                    ${company.period}
                 </div>
-                <div class="exp-card-dot-wrapper">
-                    <div class="exp-card-dot"></div>
-                </div>
-                <div class="exp-card-spacer"></div>
-            `;
-        }
-        
-        // Add category data attribute for filtering
-        card.setAttribute('data-category', company.category);
+                <p class="exp-description">${company.description}</p>
+                ${skills.length > 0 ? `
+                    <div class="exp-skills">
+                        ${skills.map(skill => `<span class="exp-skill-tag">${skill}</span>`).join('')}
+                    </div>
+                ` : ''}
+                ${company.website && company.website !== '#' ? `
+                    <a href="${company.website}" target="_blank" class="exp-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Visit Company
+                    </a>
+                ` : ''}
+            </div>
+            <div class="exp-card-spacer"></div>
+        `;
         
         container.appendChild(card);
-    });
-    
-    // Initialize filter functionality
-    initializeExperienceFilters();
-}
-
-// ===== EXPERIENCE FILTER FUNCTIONALITY =====
-function initializeExperienceFilters() {
-    const filterButtons = document.querySelectorAll('.experience-filter-btn');
-    const experienceCards = document.querySelectorAll('.exp-card');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.getAttribute('data-filter');
-            
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            // Filter cards with animation
-            experienceCards.forEach((card, index) => {
-                const category = card.getAttribute('data-category');
-                
-                if (filter === 'all' || category === filter) {
-                    setTimeout(() => {
-                        card.style.display = 'grid';
-                        card.style.animation = 'none';
-                        setTimeout(() => {
-                            card.style.animation = '';
-                        }, 10);
-                    }, index * 50);
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
     });
 }
 
@@ -1572,75 +1469,27 @@ function initRotatingOpportunities() {
     setInterval(rotateText, 3000);
 }
 
-// ===== ABOUT ME IMAGE ROTATION - FIXED =====
+// ===== ABOUT ME IMAGE ROTATION =====
 function initAboutImageRotation() {
-    const container = document.getElementById('about-media-slideshow');
+    const images = document.querySelectorAll('.about-image');
     
-    if (!container) return;
-    
-    // All uploaded images from About me folder
-    const mediaFiles = [
-        '1.JPEG', '2.JPEG', '3.jpg', '4.JPG', '5.JPG', '5_f.JPG',
-        '8.HEIF', '9.HEIF', '11.HEIC', '12.HEIF', '13.JPG', '14.jpg',
-        '16.JPG', '17.JPG', '21.JPG', '24.JPG', '25.JPG', '26.jpg',
-        '27.JPG', '28.JPG', '32.JPG', '34.HEIC', '35.jpg', '36.JPG',
-        '37.JPG', '38.JPG', '39.jpg', '40.HEIC', '42.HEIC', '43.HEIC',
-        '45.HEIC', '47.JPEG', '48.HEIC', '58.HEIC', '61.jpg', '62.JPG',
-        '63.JPG', '73.HEIC', '76.JPG', '2_f.JPEG', '2_fffff.JPG', '2_fffffff.heic'
-    ];
+    if (images.length === 0) return;
     
     let currentIndex = 0;
-    let isTransitioning = false;
-    
-    // Create all image elements
-    mediaFiles.forEach((file, index) => {
-        const img = document.createElement('img');
-        img.src = `About me/${file}`;
-        img.className = 'about-slide-image';
-        img.alt = 'Kartik Pandya';
-        img.style.opacity = '0';
-        img.style.position = 'absolute';
-        img.style.top = '0';
-        img.style.left = '0';
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'cover';
-        img.style.transition = 'opacity 0.8s ease-in-out';
-        
-        // Show first image immediately when loaded
-        if (index === 0) {
-            img.onload = () => {
-                img.style.opacity = '1';
-            };
-        }
-        
-        container.appendChild(img);
-    });
-    
-    const images = container.querySelectorAll('.about-slide-image');
     
     function rotateImages() {
-        if (isTransitioning || images.length === 0) return;
+        // Remove active class from current image
+        images[currentIndex].classList.remove('active');
         
-        isTransitioning = true;
+        // Move to next image
+        currentIndex = (currentIndex + 1) % images.length;
         
-        const currentImg = images[currentIndex];
-        const nextIndex = (currentIndex + 1) % images.length;
-        const nextImg = images[nextIndex];
-        
-        // Fade out current
-        currentImg.style.opacity = '0';
-        
-        // Wait for fade out, then fade in next
-        setTimeout(() => {
-            nextImg.style.opacity = '1';
-            currentIndex = nextIndex;
-            isTransitioning = false;
-        }, 800);
+        // Add active class to new image
+        images[currentIndex].classList.add('active');
     }
     
-    // Start rotation after 3 seconds
-    setInterval(rotateImages, 3000);
+    // Rotate every 4 seconds
+    setInterval(rotateImages, 4000);
 }
 
 // ===== ADVANCED MAGNETIC CURSOR WITH SMOOTH TRAIL =====
