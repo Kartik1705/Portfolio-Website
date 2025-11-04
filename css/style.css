@@ -5285,7 +5285,7 @@ button {
 .experience-category-pill.active {
     background: linear-gradient(135deg, var(--navy-primary), var(--blue-secondary));
     border-color: transparent;
-    color: var(--cream-light);
+    color: #FFFFFF;
     box-shadow: 0 10px 30px rgba(49, 76, 111, 0.45);
     transform: translateY(-2px);
 }
@@ -8080,7 +8080,8 @@ body.dark-mode .timeline-content {
 
 .exp-card-dot {
     position: absolute;
-    right: -12px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 30px;
     width: 20px;
     height: 20px;
@@ -8092,11 +8093,6 @@ body.dark-mode .timeline-content {
                 0 0 20px rgba(93, 173, 226, 0.6);
     transition: all 0.4s ease;
     cursor: pointer;
-}
-
-.exp-card:nth-child(even) .exp-card-dot {
-    right: auto;
-    left: -12px;
 }
 
 .exp-card-content:hover ~ .exp-card-spacer .exp-card-dot,
