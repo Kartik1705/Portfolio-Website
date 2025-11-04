@@ -902,7 +902,7 @@ function setupMobileMenu() {
 let currentExpFilter = 'all';
 
 function initExperienceTabs() {
-    const tabs = document.querySelectorAll('.experience-filter-tabs .filter-btn');
+    const tabs = document.querySelectorAll('.experience-category-pill');
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             // Remove active class from all tabs
