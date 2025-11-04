@@ -2133,6 +2133,32 @@ button {
     position: relative;
 }
 
+/* About Section Responsive */
+@media (max-width: 968px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 40px;
+    }
+    
+    .about-images-container {
+        order: -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-content {
+        gap: 30px;
+        margin-top: 30px;
+    }
+    
+    .about-images-container {
+        max-width: 320px;
+    }
+}
+
 /* Text Content - Right Side */
 .about-text-container {
     display: flex;
@@ -3021,6 +3047,20 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
+}
+
+/* Education Grid Responsive Breakpoints */
+@media (max-width: 968px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 640px) {
+    .education-grid {
+        gap: 20px;
+    }
 }
 
 .education-card {
@@ -4860,6 +4900,42 @@ button {
     perspective: 1500px;
 }
 
+/* Certificates Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .certificates-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 968px) {
+    .certificates-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 640px) {
+    .certificates-gallery {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .cert-flip-card {
+        height: 380px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificates-gallery {
+        gap: 20px;
+    }
+    
+    .cert-flip-card {
+        height: 360px;
+    }
+}
+
 /* 3D Flip Card Container */
 .cert-flip-card {
     position: relative;
@@ -5315,6 +5391,28 @@ button {
     gap: 35px;
     margin-top: 40px;
     perspective: 1000px;
+}
+
+/* Projects Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .projects-masonry {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 968px) {
+    .projects-masonry {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-masonry {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 }
 
 .project-card {
@@ -8254,30 +8352,59 @@ body.dark-mode .timeline-content {
     transform: translateX(4px);
 }
 
-/* Mobile Responsive for Experience */
+/* Tablet Responsive for Experience - Start alternating breakdown */
+@media (max-width: 1024px) {
+    .exp-card {
+        gap: 30px;
+    }
+    
+    .exp-card-content {
+        padding: 24px;
+    }
+}
+
+/* Mobile Responsive for Experience - Stack all cards */
 @media (max-width: 768px) {
     .experience-timeline-line {
         left: 20px;
+        width: 3px;
     }
     
+    /* Convert grid to single column with left-aligned timeline */
     .exp-card,
+    .exp-card:nth-child(odd),
     .exp-card:nth-child(even) {
-        flex-direction: column;
+        display: block;
         padding-left: 60px;
-        gap: 0;
+        position: relative;
     }
     
+    /* Hide spacers (not needed in mobile stacked layout) */
     .exp-card-spacer {
         display: none;
     }
     
-    .exp-card-dot {
-        left: 12px;
-        top: 24px;
+    /* All content takes full width */
+    .exp-card-content,
+    .exp-card:nth-child(odd) .exp-card-content,
+    .exp-card:nth-child(even) .exp-card-content {
+        grid-column: unset;
+        padding: 20px;
+        width: 100%;
     }
     
-    .exp-card-content {
-        padding: 20px;
+    /* Timeline dot positioned on left timeline */
+    .exp-timeline-dot {
+        display: block !important;
+        position: absolute;
+        left: 12px;
+        top: 24px;
+        width: 16px;
+        height: 16px;
+        background: var(--primary-color);
+        border: 3px solid var(--navy-dark);
+        border-radius: 50%;
+        z-index: 2;
     }
     
     .exp-header,
@@ -8306,6 +8433,32 @@ body.dark-mode .timeline-content {
     
     .exp-company {
         font-size: 0.95rem;
+    }
+}
+
+/* Small Mobile - Further compress */
+@media (max-width: 480px) {
+    .exp-card {
+        padding-left: 50px;
+    }
+    
+    .experience-timeline-line {
+        left: 15px;
+    }
+    
+    .exp-timeline-dot {
+        left: 8px;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .exp-card-content {
+        padding: 16px;
+    }
+    
+    .exp-logo {
+        width: 48px;
+        height: 48px;
     }
 }
 
