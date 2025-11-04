@@ -2113,19 +2113,19 @@ button {
 
 .about-content {
     display: grid;
-    grid-template-columns: 45% 55%;
+    grid-template-columns: 42% 58%;
     gap: 50px;
     align-items: stretch;
     margin-top: 60px;
     position: relative;
+    min-height: 620px;
 }
 
 /* Text Content - Right Side */
 .about-text-container {
     display: flex;
     flex-direction: column;
-    gap: 35px;
-    min-height: 600px;
+    height: 100%;
 }
 
 .about-intro,
@@ -2241,20 +2241,21 @@ button {
     text-align: center;
 }
 
-/* Image Container - Right Side */
+/* Image Container - Left Side */
 .about-images-container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    height: 100%;
 }
 
 .about-image-frame {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    height: 600px;
+    max-width: 100%;
+    height: 550px;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(49, 76, 111, 0.3),
@@ -9257,7 +9258,7 @@ body.dark-mode .timeline-content {
     position: relative;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
-    padding: 45px;
+    padding: 50px 45px;
     border-radius: 25px;
     border: 2px solid rgba(99, 132, 162, 0.2);
     box-shadow: 
@@ -9269,6 +9270,7 @@ body.dark-mode .timeline-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 620px;
 }
 
 .about-story-card:hover {
