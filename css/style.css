@@ -8102,27 +8102,23 @@ body.dark-mode .timeline-content {
 }
 
 .exp-timeline-dot {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     background: linear-gradient(135deg, #2874A6, #5DADE2);
-    border: 4px solid #0D1B2A;
+    border: 3px solid #0D1B2A;
     border-radius: 50%;
-    z-index: 10;
-    box-shadow: 0 0 0 4px rgba(93, 173, 226, 0.4),
-                0 0 20px rgba(93, 173, 226, 0.6);
+    box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.4),
+                0 0 15px rgba(93, 173, 226, 0.6);
     transition: all 0.4s ease;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .exp-card:hover .exp-timeline-dot,
 .exp-timeline-dot:hover {
-    transform: scale(1.5);
-    box-shadow: 0 0 0 8px rgba(93, 173, 226, 0.5),
-                0 0 40px rgba(93, 173, 226, 0.8);
+    transform: scale(1.4);
+    box-shadow: 0 0 0 6px rgba(93, 173, 226, 0.5),
+                0 0 30px rgba(93, 173, 226, 0.8);
     animation: pulse 2s infinite;
 }
 
