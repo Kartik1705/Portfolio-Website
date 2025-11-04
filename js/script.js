@@ -815,6 +815,7 @@ function initializeWebsite() {
     setupNavigation();
     setupMobileMenu();
     loadExperience();
+    initExperienceTabs();
     loadEducation();
     loadSkills();
     loadCertificates();
@@ -897,14 +898,66 @@ function setupMobileMenu() {
     }
 }
 
-// ===== LOAD EXPERIENCE WITH SIMPLE TIMELINE =====
+// ===== LOAD EXPERIENCE WITH FILTERING AND TIMELINE =====
+let currentExpFilter = 'all';
+
+function initExperienceTabs() {
+    const tabs = document.querySelectorAll('.experience-filter-tabs .filter-btn');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            // Add active to clicked tab
+            tab.classList.add('active');
+            // Get filter value
+            currentExpFilter = tab.getAttribute('data-filter');
+            // Reload experience with filter
+            loadExperience();
+        });
+    });
+}
+
 function loadExperience() {
     const container = document.getElementById('experience-cards');
     if (!container) return;
     
     container.innerHTML = '';
     
-    companiesData.forEach((company, index) => {
+    // Filter companies based on current filter
+    let filteredCompanies = companiesData;
+    
+    if (currentExpFilter === 'current') {
+        // Only NPLB
+        filteredCompanies = companiesData.filter(c => 
+            c.name === "No Patient Left Behind"
+        );
+    } else if (currentExpFilter === 'product') {
+        // Product roles including NPLB, Agilent, Motorola, Dolphin
+        filteredCompanies = companiesData.filter(c => 
+            c.role.toLowerCase().includes('product') || 
+            c.role.toLowerCase().includes('marketing')
+        );
+    } else if (currentExpFilter === 'consulting') {
+        // Consulting roles
+        filteredCompanies = companiesData.filter(c => 
+            c.role.toLowerCase().includes('consult') || 
+            c.role.toLowerCase().includes('strategy')
+        );
+    } else if (currentExpFilter === 'engineering') {
+        // Engineering roles
+        filteredCompanies = companiesData.filter(c => 
+            c.role.toLowerCase().includes('engineer') || 
+            c.role.toLowerCase().includes('r&d') ||
+            c.role.toLowerCase().includes('intern')
+        );
+    } else if (currentExpFilter === 'volunteering') {
+        // Volunteering
+        filteredCompanies = companiesData.filter(c => 
+            c.role.toLowerCase().includes('volunteer')
+        );
+    }
+    
+    filteredCompanies.forEach((company, index) => {
         const card = document.createElement('div');
         card.className = 'exp-card';
         card.style.opacity = '0';
