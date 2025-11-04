@@ -1002,10 +1002,13 @@ function loadExperience() {
                     </a>
                 ` : ''}
             </div>
-            <div class="exp-card-spacer">
-                <div class="exp-card-dot"></div>
-            </div>
+            <div class="exp-card-spacer"></div>
         `;
+        
+        // Add dot to the timeline for this card
+        const dotElement = document.createElement('div');
+        dotElement.className = 'exp-timeline-dot';
+        card.querySelector('.exp-card-spacer:last-child').appendChild(dotElement);
         
         container.appendChild(card);
     });

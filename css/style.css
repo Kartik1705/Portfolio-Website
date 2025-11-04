@@ -8098,7 +8098,7 @@ body.dark-mode .timeline-content {
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-.exp-card-dot {
+.exp-timeline-dot {
     position: absolute;
     left: 0;
     top: 30px;
@@ -8114,9 +8114,8 @@ body.dark-mode .timeline-content {
     cursor: pointer;
 }
 
-.exp-card-content:hover ~ .exp-card-spacer .exp-card-dot,
-.exp-card:hover .exp-card-dot,
-.exp-card-dot:hover {
+.exp-card:hover .exp-timeline-dot,
+.exp-timeline-dot:hover {
     transform: scale(1.5);
     box-shadow: 0 0 0 8px rgba(93, 173, 226, 0.5),
                 0 0 40px rgba(93, 173, 226, 0.8);
