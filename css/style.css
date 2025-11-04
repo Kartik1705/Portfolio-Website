@@ -5269,7 +5269,7 @@ button {
                 0 0 50px rgba(99, 132, 162, 0.25),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
     border-color: var(--blue-secondary);
-    color: var(--navy-dark);
+    color: #FFFFFF;
     animation: cellMembranePulse 1.2s ease-in-out infinite;
 }
 
@@ -7995,8 +7995,9 @@ body.dark-mode .timeline-content {
 }
 
 .exp-card {
-    display: flex;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
     align-items: flex-start;
     position: relative;
     opacity: 0;
@@ -8021,17 +8022,36 @@ body.dark-mode .timeline-content {
     }
 }
 
-.exp-card:nth-child(even) {
-    flex-direction: row-reverse;
+/* Odd cards: content on right, empty on left */
+.exp-card:nth-child(odd) .exp-card-content {
+    grid-column: 3;
+}
+
+.exp-card:nth-child(odd) .exp-card-spacer:first-child {
+    grid-column: 1;
+}
+
+/* Even cards: content on left, empty on right */
+.exp-card:nth-child(even) .exp-card-content {
+    grid-column: 1;
+}
+
+.exp-card:nth-child(even) .exp-card-spacer:first-child {
+    grid-column: 3;
 }
 
 .exp-card-spacer {
-    flex: 1;
+    position: relative;
+}
+
+/* Dot container - always in the center column */
+.exp-card-spacer:last-child {
+    grid-column: 2;
+    width: 20px;
     position: relative;
 }
 
 .exp-card-content {
-    flex: 1;
     background: linear-gradient(135deg, 
         rgba(26, 35, 50, 0.95) 0%,
         rgba(36, 48, 68, 0.92) 100%
@@ -8080,8 +8100,7 @@ body.dark-mode .timeline-content {
 
 .exp-card-dot {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     top: 30px;
     width: 20px;
     height: 20px;
@@ -8226,23 +8245,23 @@ body.dark-mode .timeline-content {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--primary-color);
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 0.95rem;
     margin-top: 14px;
     padding: 8px 18px;
-    background: rgba(40, 116, 166, 0.12);
+    background: rgba(93, 173, 226, 0.2);
     border-radius: 10px;
-    border: 1px solid rgba(40, 116, 166, 0.3);
+    border: 1px solid rgba(93, 173, 226, 0.4);
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .exp-link:hover {
-    background: rgba(40, 116, 166, 0.25);
-    border-color: var(--primary-color);
+    background: rgba(93, 173, 226, 0.35);
+    border-color: #5DADE2;
     transform: translateX(5px);
-    box-shadow: 0 4px 15px rgba(40, 116, 166, 0.3);
+    box-shadow: 0 4px 15px rgba(93, 173, 226, 0.4);
 }
 
 .exp-link i {
