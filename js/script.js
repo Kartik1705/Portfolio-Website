@@ -1528,8 +1528,31 @@ function initRotatingOpportunities() {
 
 // ===== ABOUT ME IMAGE ROTATION =====
 function initAboutImageRotation() {
-    const images = document.querySelectorAll('.about-image');
+    // List of all 43 images
+    const imageFiles = [
+        '1.JPEG', '2.JPEG', '2_f.JPEG', '2_fffff.JPG', '2_fffffff.jpg',
+        '3.jpg', '4.JPG', '5.JPG', '5_f.JPG', '8.jpg', '9.jpg', '11.jpg',
+        '12.jpg', '13.JPG', '14.jpg', '16.JPG', '17.JPG', '21.JPG', '24.JPG',
+        '25.JPG', '26.jpg', '27.JPG', '28.JPG', '32.JPG', '34.jpg', '35.jpg',
+        '36.JPG', '37.JPG', '38.JPG', '39.jpg', '40.jpg', '42.jpg', '43.jpg',
+        '45.jpg', '47.JPEG', '48.jpg', '58.jpg', '61.jpg', '62.JPG', '63.JPG',
+        '73.jpg', '76.JPG'
+    ];
     
+    const container = document.getElementById('about-images-dynamic');
+    if (!container) return;
+    
+    // Create image elements dynamically
+    imageFiles.forEach((filename, index) => {
+        const img = document.createElement('img');
+        img.src = `assets/images/about/${filename}`;
+        img.alt = 'Kartik Pandya';
+        img.className = 'about-image';
+        if (index === 0) img.classList.add('active');
+        container.appendChild(img);
+    });
+    
+    const images = document.querySelectorAll('.about-image');
     if (images.length === 0) return;
     
     let currentIndex = 0;
@@ -1545,8 +1568,8 @@ function initAboutImageRotation() {
         images[currentIndex].classList.add('active');
     }
     
-    // Rotate every 4 seconds
-    setInterval(rotateImages, 4000);
+    // Rotate every 3 seconds (faster since we have 43 images)
+    setInterval(rotateImages, 3000);
 }
 
 // ===== ADVANCED MAGNETIC CURSOR WITH SMOOTH TRAIL =====
