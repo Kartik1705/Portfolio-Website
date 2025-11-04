@@ -4543,34 +4543,54 @@ button {
 }
 
 @media (max-width: 768px) {
-    /* ===== NAVBAR MOBILE FIX - MAKE HAMBURGER VISIBLE ===== */
+    /* ===== REMOVE ALL CUSTOM CURSORS FOR MOBILE (TOUCH DEVICES) ===== */
+    *, *::before, *::after,
+    body, html,
+    a, button, .btn, .cta-button,
+    .project-card, .research-card, .cert-item,
+    .nav-link, .mobile-toggle,
+    .exp-card, .skill-pill,
+    .interest-item, .tag-advanced {
+        cursor: auto !important;
+    }
+    
+    /* Hide custom cursor elements completely on mobile */
+    .custom-cursor,
+    .custom-cursor::before,
+    .custom-cursor::after {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+    
+    /* ===== NAVBAR MOBILE FIX - SMALLER & COMPACT ===== */
     .navbar {
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(15px);
-        height: 60px;
+        height: 50px;
         z-index: 10000 !important;
     }
     
     .navbar .container {
-        padding: 0.5rem 15px;
-        height: 60px;
+        padding: 0.4rem 12px;
+        height: 50px;
     }
     
     .nav-brand {
-        font-size: 1rem;
-        gap: 8px;
+        font-size: 0.85rem;
+        gap: 6px;
     }
     
     .nav-logo-img {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
     
     .nav-name {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
     
-    /* SHOW HAMBURGER MENU */
+    /* SHOW HAMBURGER MENU - SMALLER */
     .mobile-toggle {
         display: flex !important;
         z-index: 10002;
@@ -4578,25 +4598,25 @@ button {
     }
     
     .mobile-toggle span {
-        width: 25px;
-        height: 3px;
+        width: 22px;
+        height: 2px;
         background: var(--primary-color);
     }
     
     /* HIDE DESKTOP MENU AND SHOW MOBILE MENU */
     .nav-menu {
         position: fixed;
-        top: 60px;
+        top: 50px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 50px);
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 2rem 1.5rem;
-        gap: 0.5rem;
+        padding: 1.5rem 1.2rem;
+        gap: 0.3rem;
         transition: left 0.3s ease;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         overflow-y: auto;
@@ -4608,133 +4628,232 @@ button {
     }
     
     .nav-link {
-        font-size: 1.1rem;
-        padding: 0.75rem 0;
+        font-size: 0.95rem;
+        padding: 0.6rem 0;
         width: 100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
     
-    /* Show CV button in mobile menu */
+    /* Show CV button in mobile menu - SMALLER */
     .btn-resume {
         display: inline-flex !important;
         width: 100%;
         justify-content: center;
-        margin-top: 1rem;
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
+        margin-top: 0.8rem;
+        padding: 0.75rem 1.2rem;
+        font-size: 0.85rem;
     }
     
-    /* ===== HERO SECTION MOBILE FIX ===== */
+    .btn-resume i {
+        font-size: 0.8rem;
+    }
+    
+    /* ===== HERO SECTION MOBILE FIX - DRAMATICALLY SMALLER ===== */
     .hero-advanced {
         min-height: auto;
-        padding: 70px 0 40px;
+        padding: 60px 0 30px;
+        background: linear-gradient(135deg, #1a2332 0%, #0d1224 100%) !important;
+    }
+    
+    /* FIX BACKGROUND - NO GREEN BLUR */
+    #particles-canvas {
+        opacity: 0.3 !important;
+        filter: none !important;
+    }
+    
+    .gradient-mesh {
+        opacity: 0.2 !important;
+        filter: none !important;
+        background: linear-gradient(135deg, 
+            rgba(49, 76, 111, 0.1) 0%, 
+            rgba(26, 35, 50, 0.1) 100%) !important;
     }
     
     .hero-content-wrapper {
-        padding: 20px 0;
+        padding: 15px 0;
     }
     
     .profile-img-container {
-        width: 140px;
-        height: 140px;
-        margin-bottom: 20px;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 12px;
     }
     
     .profile-img-advanced {
-        width: 140px;
-        height: 140px;
+        width: 100px;
+        height: 100px;
     }
     
-    /* FIX AVAILABILITY BADGE - MAKE IT VISIBLE */
+    .profile-glow {
+        display: none;
+    }
+    
+    /* FIX AVAILABILITY BADGE - SMALLER */
     .availability-badge {
         position: static !important;
         display: flex;
         justify-content: center;
-        margin: 15px auto 20px;
+        margin: 10px auto 12px;
         transform: none !important;
-        max-width: 280px;
+        max-width: 220px;
+    }
+    
+    .badge-glow {
+        display: none;
     }
     
     .badge-content {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
-    }
-    
-    .badge-role {
-        font-size: 1rem;
-    }
-    
-    .greeting-text {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
-    
-    .hero-name {
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-    
-    .role-container {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-    }
-    
-    .typed-role {
-        font-size: 1.1rem;
-    }
-    
-    .hero-bio {
-        font-size: 0.9rem;
-        line-height: 1.6;
-        margin-bottom: 25px;
-        padding: 0 10px;
-    }
-    
-    .hero-stats-inline {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    
-    .stat-inline {
-        min-width: 80px;
-    }
-    
-    .stat-num-inline {
-        font-size: 1.8rem;
-    }
-    
-    .stat-label-inline {
+        padding: 0.5rem 0.9rem;
         font-size: 0.75rem;
     }
     
-    .expertise-tags-advanced {
+    .badge-status-indicator {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .badge-role {
+        font-size: 0.85rem;
+    }
+    
+    .badge-label,
+    .badge-suffix {
+        font-size: 0.75rem;
+    }
+    
+    /* MUCH SMALLER TEXT */
+    .greeting-text {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .wave {
+        font-size: 1.2rem;
+    }
+    
+    .hero-name {
+        font-size: 1.5rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .name-letter {
+        font-size: 1.5rem !important;
+    }
+    
+    .role-container {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .role-prefix {
+        font-size: 0.9rem;
+    }
+    
+    .typed-role {
+        font-size: 0.9rem !important;
+    }
+    
+    .cursor {
+        font-size: 0.9rem;
+    }
+    
+    /* SMALLER BIO */
+    .hero-bio {
+        font-size: 0.8rem !important;
+        line-height: 1.5;
+        margin-bottom: 18px;
+        padding: 0 8px;
+    }
+    
+    .highlight-keyword,
+    .highlight-company {
+        font-size: 0.8rem !important;
+    }
+    
+    /* SMALLER STATS */
+    .hero-stats-inline {
         gap: 10px;
+        flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
+    }
+    
+    .stat-inline {
+        min-width: 65px;
+    }
+    
+    .stat-num-inline {
+        font-size: 1.4rem !important;
+    }
+    
+    .stat-label-inline {
+        font-size: 0.65rem !important;
+    }
+    
+    .stat-divider {
+        height: 30px;
+    }
+    
+    /* SMALLER TAGS */
+    .expertise-tags-advanced {
+        gap: 6px;
+        justify-content: center;
+        margin-bottom: 20px;
     }
     
     .tag-advanced {
-        padding: 8px 16px;
-        font-size: 0.8rem;
+        padding: 6px 12px;
+        font-size: 0.7rem !important;
     }
     
     .scroll-down {
-        margin-top: 20px;
+        margin-top: 15px;
+    }
+    
+    .scroll-text {
+        font-size: 0.75rem;
+    }
+    
+    .scroll-arrow {
+        width: 20px;
+        height: 30px;
+    }
+    
+    /* ===== GLOBAL SECTION REDUCTIONS ===== */
+    .section {
+        padding: 40px 0 !important;
+    }
+    
+    .section-title {
+        font-size: 1.6rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .section-subtitle {
+        font-size: 0.8rem !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .container {
+        padding: 0 12px !important;
     }
     
     /* ===== ABOUT IMAGES MOBILE FIX ===== */
+    .about-section {
+        padding: 35px 0 !important;
+    }
+    
     .about-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
+        margin-top: 20px !important;
     }
     
     .about-images-container {
         order: -1;
         width: 100%;
         max-width: 100%;
-        min-height: 400px;
+        min-height: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -4742,11 +4861,12 @@ button {
     
     .about-image-frame {
         width: 100%;
-        max-width: 400px;
-        height: 400px;
-        min-height: 400px;
+        max-width: 300px;
+        height: 300px;
+        min-height: 300px;
         position: relative;
         display: block;
+        border-radius: 20px;
     }
     
     .about-image {
@@ -4760,11 +4880,21 @@ button {
         display: block !important;
         opacity: 0;
         transition: opacity 1s ease-in-out;
+        border-radius: 20px;
     }
     
     .about-image.active {
         opacity: 1 !important;
         z-index: 2;
+    }
+    
+    .about-story-card {
+        padding: 16px;
+    }
+    
+    .about-story-text {
+        font-size: 0.85rem !important;
+        line-height: 1.5;
     }
     
     .interests-grid {
@@ -4879,33 +5009,51 @@ button {
 }
 
 @media (max-width: 480px) {
-    /* ===== COMPREHENSIVE TEXT RESPONSIVENESS ===== */
+    /* ===== EVEN SMALLER FOR SMALL PHONES ===== */
     .container {
-        padding: 0 15px;
+        padding: 0 10px;
     }
     
-    /* Hero Section Text */
+    /* Hero Section Text - EXTRA SMALL */
     .hero-name {
-        font-size: 2rem;
+        font-size: 1.3rem !important;
         line-height: 1.2;
     }
     
+    .name-letter {
+        font-size: 1.3rem !important;
+    }
+    
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
     
     .hero-bio {
-        font-size: 0.9rem;
-        line-height: 1.6;
+        font-size: 0.75rem !important;
+        line-height: 1.5;
     }
     
     .typed-role {
-        font-size: 1.1rem;
+        font-size: 0.85rem !important;
     }
     
     .tag-advanced {
-        padding: 8px 16px;
-        font-size: 0.8rem;
+        padding: 5px 10px;
+        font-size: 0.65rem !important;
+    }
+    
+    .profile-img-container,
+    .profile-img-advanced {
+        width: 90px !important;
+        height: 90px !important;
+    }
+    
+    .stat-num-inline {
+        font-size: 1.2rem !important;
+    }
+    
+    .stat-label-inline {
+        font-size: 0.6rem !important;
     }
     
     /* Section Titles */
@@ -5100,19 +5248,35 @@ button {
         font-size: 0.95rem;
     }
     
-    /* ===== RESEARCH PAPERS MOBILE FIX - NO TEXT CUTOFF ===== */
+    /* ===== RESEARCH PAPERS MOBILE FIX - MUCH SMALLER ===== */
+    .research-section {
+        padding: 40px 0 !important;
+    }
+    
+    .research-section .section-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 8px;
+    }
+    
+    .research-section .section-subtitle {
+        font-size: 0.8rem !important;
+        margin-bottom: 20px;
+    }
+    
     .research-grid {
         grid-template-columns: 1fr !important;
-        gap: 20px;
+        gap: 15px;
     }
     
     .research-card {
-        padding: 16px !important;
+        padding: 12px !important;
+        border-radius: 12px;
     }
     
     .research-card-title {
-        font-size: 0.95rem !important;
-        line-height: 1.4 !important;
+        font-size: 0.85rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 6px;
         word-wrap: break-word;
         overflow-wrap: break-word;
         white-space: normal !important;
@@ -5120,45 +5284,63 @@ button {
     }
     
     .research-card-authors {
-        font-size: 0.85rem !important;
+        font-size: 0.75rem !important;
+        margin-bottom: 8px;
         word-wrap: break-word;
         overflow-wrap: break-word;
         white-space: normal !important;
+        font-style: italic;
+    }
+    
+    .research-card-meta {
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
     }
     
     .research-card-journal {
-        font-size: 0.8rem !important;
-        padding: 4px 10px;
+        font-size: 0.7rem !important;
+        padding: 3px 8px;
         white-space: nowrap;
     }
     
     .research-card-year {
-        font-size: 0.8rem !important;
-        padding: 4px 10px;
+        font-size: 0.7rem !important;
+        padding: 3px 8px;
     }
     
     .research-card-citations {
-        font-size: 0.8rem !important;
+        font-size: 0.7rem !important;
+        padding: 3px 8px;
         white-space: nowrap;
     }
     
+    .research-card-citations i {
+        font-size: 0.65rem;
+    }
+    
     .research-card-description {
-        font-size: 0.85rem !important;
-        line-height: 1.5;
+        font-size: 0.75rem !important;
+        line-height: 1.4;
+        margin-bottom: 10px;
         word-wrap: break-word;
         overflow-wrap: break-word;
         white-space: normal !important;
     }
     
     .research-card-actions {
-        gap: 8px;
+        gap: 6px;
         flex-wrap: wrap;
     }
     
     .research-btn {
-        padding: 7px 12px !important;
-        font-size: 0.8rem !important;
-        white-space: nowrap;
+        padding: 5px 10px !important;
+        font-size: 0.7rem !important;
+        border-radius: 8px;
+    }
+    
+    .research-btn i {
+        font-size: 0.65rem;
     }
 }
 
@@ -8748,8 +8930,35 @@ body.dark-mode .timeline-content {
         width: 3px;
     }
     
+    .experience-section {
+        padding: 35px 0 !important;
+    }
+    
+    .experience-section .section-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .experience-section .section-subtitle {
+        font-size: 0.8rem !important;
+    }
+    
+    .experience-category-filters {
+        margin: 30px 0 25px;
+        gap: 8px;
+    }
+    
+    .experience-category-pill {
+        padding: 8px 16px;
+        font-size: 0.7rem !important;
+    }
+    
+    .exp-pill-count {
+        font-size: 0.65rem !important;
+        padding: 2px 6px;
+    }
+    
     .experience-cards {
-        gap: 50px;
+        gap: 35px;
     }
     
     /* Convert grid to single column with left-aligned timeline */
@@ -8757,7 +8966,7 @@ body.dark-mode .timeline-content {
     .exp-card:nth-child(odd),
     .exp-card:nth-child(even) {
         display: block;
-        padding-left: 55px;
+        padding-left: 50px;
         position: relative;
     }
     
@@ -8766,14 +8975,14 @@ body.dark-mode .timeline-content {
         display: none;
     }
     
-    /* All content takes full width - SMALLER FOR MOBILE */
+    /* All content takes full width - MUCH SMALLER FOR MOBILE */
     .exp-card-content,
     .exp-card:nth-child(odd) .exp-card-content,
     .exp-card:nth-child(even) .exp-card-content {
         grid-column: unset;
-        padding: 16px;
+        padding: 12px;
         width: 100%;
-        border-radius: 16px;
+        border-radius: 14px;
         min-height: auto;
     }
     
@@ -8809,20 +9018,20 @@ body.dark-mode .timeline-content {
         flex-wrap: wrap;
     }
     
-    /* SMALLER ELEMENTS FOR MOBILE - FIX TEXT CUTOFF */
+    /* MUCH SMALLER ELEMENTS FOR MOBILE - FIX TEXT CUTOFF */
     .exp-logo {
-        width: 45px;
-        height: 45px;
-        min-width: 45px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
         flex-shrink: 0;
-        border-radius: 10px;
-        padding: 6px;
+        border-radius: 8px;
+        padding: 5px;
     }
     
     .exp-role {
-        font-size: 0.95rem !important;
+        font-size: 0.85rem !important;
         line-height: 1.3;
-        margin-bottom: 4px;
+        margin-bottom: 3px;
         word-wrap: break-word;
         overflow-wrap: break-word;
         white-space: normal !important;
@@ -8830,7 +9039,7 @@ body.dark-mode .timeline-content {
     }
     
     .exp-company {
-        font-size: 0.85rem !important;
+        font-size: 0.75rem !important;
         word-wrap: break-word;
         overflow-wrap: break-word;
         white-space: normal !important;
@@ -8838,41 +9047,45 @@ body.dark-mode .timeline-content {
     }
     
     .exp-date {
-        font-size: 0.8rem;
-        padding: 4px 10px;
-        margin-bottom: 10px;
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        margin-bottom: 8px;
         white-space: normal;
         text-align: left;
     }
     
     .exp-date i {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
     
     .exp-description {
-        font-size: 0.85rem !important;
-        line-height: 1.5;
-        margin-bottom: 10px;
+        font-size: 0.75rem !important;
+        line-height: 1.4;
+        margin-bottom: 8px;
         word-wrap: break-word;
         overflow-wrap: break-word;
         white-space: normal !important;
     }
     
     .exp-skills {
-        gap: 6px;
-        margin-bottom: 10px;
+        gap: 5px;
+        margin-bottom: 8px;
     }
     
     .exp-skill-tag {
-        padding: 4px 10px;
-        font-size: 0.7rem !important;
-        border-radius: 10px;
+        padding: 3px 8px;
+        font-size: 0.65rem !important;
+        border-radius: 8px;
         white-space: nowrap;
     }
     
     .exp-link {
-        font-size: 0.8rem;
-        padding: 7px 12px;
+        font-size: 0.7rem;
+        padding: 6px 10px;
+    }
+    
+    .exp-link i {
+        font-size: 0.65rem;
     }
     
     /* FIX TIMELINE DOTS POSITION */
