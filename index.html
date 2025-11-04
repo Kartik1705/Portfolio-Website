@@ -45,34 +45,18 @@
     <!-- LinkedIn -->
     <meta property="og:image:alt" content="Kartik Pandya - Product Manager specializing in Life Sciences and Biotech Innovation">
     
-    <!-- ========================================== -->
-    <!-- FAVICONS - Complete Cross-Platform Support -->
-    <!-- ========================================== -->
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#314C6F">
+    <meta name="msapplication-TileColor" content="#314C6F">
     
-    <!-- Standard Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1761628745">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png?v=1761628745">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png?v=1761628745">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     
-    <!-- Apple Touch Icons (iOS - iPhone/iPad) -->
-    <link rel="apple-touch-icon" href="/assets/images/favicons/apple-touch-icon.png?v=1761628745">
-    
-    <!-- Android Chrome (Home Screen) -->
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicons/android-chrome-192x192.png?v=1761628745">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicons/android-chrome-512x512.png?v=1761628745">
-    
-    <!-- Web App Manifest (PWA) -->
-    <link rel="manifest" href="/site.webmanifest?v=1761628745">
-    
-    <!-- Microsoft Tiles (Windows) -->
-    <meta name="msapplication-TileColor" content="#1E3A5F">
-    <meta name="msapplication-TileImage" content="/assets/images/favicons/android-chrome-192x192.png?v=1761628745">
-    <meta name="msapplication-config" content="/browserconfig.xml?v=1761628745">
-    
-    <!-- Theme Colors (Mobile Browsers) -->
-    <meta name="theme-color" content="#1E3A5F">
-    <meta name="msapplication-navbutton-color" content="#1E3A5F">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#1E3A5F">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/icon-512x512.png">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -266,47 +250,68 @@
         </div>
     </section>
 
-    <!-- About Me Section - Modern Redesign -->
+    <!-- About Me Section -->
     <section id="about" class="section about-section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">Building Products That Transform Healthcare & Life Sciences</p>
+            <p class="section-subtitle">From Curiosity to Impact | Building with Purpose</p>
             
-            <div class="about-modern-grid">
-                <!-- Left Side - Image Gallery -->
-                <div class="about-gallery-container">
-                    <div class="about-gallery-frame">
-                        <div class="gallery-glow-effect"></div>
-                        <div id="about-media-slideshow" class="media-slideshow"></div>
+            <div class="about-content">
+                <!-- Image Container - Left Side (Keep existing rotation) -->
+                <div class="about-images-container">
+                    <div class="about-image-frame">
+                        <div class="about-image-glow"></div>
+                        <img src="assets/images/about/about-1.jpg" alt="Kartik Pandya" class="about-image active" id="about-img-1">
+                        <img src="assets/images/about/about-2.jpg" alt="Kartik Pandya" class="about-image" id="about-img-2">
+                        <img src="assets/images/about/about-3.jpg" alt="Kartik Pandya" class="about-image" id="about-img-3">
+                        <div class="image-caption">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="image-caption-text">Exploring new perspectives</span>
+                        </div>
+                    </div>
+                    <div class="image-indicators">
+                        <span class="indicator active" data-index="0"></span>
+                        <span class="indicator" data-index="1"></span>
+                        <span class="indicator" data-index="2"></span>
                     </div>
                 </div>
-                
-                <!-- Right Side - Content -->
-                <div class="about-content-modern">
-                    <div class="about-card">
-                        <div class="card-icon">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <p class="about-main-text">
-                            I'm a product leader at the intersection of biotechnology, healthcare innovation, and strategic impact. 
-                            My journey from mechanical engineering to biotech product management has been fueled by an insatiable 
-                            curiosity about solving complex challenges that matter. I thrive on building products that don't just 
-                            meet market needs—they transform how we approach healthcare accessibility and life sciences innovation.
+
+                <!-- Text Content - Right Side (Single Card) -->
+                <div class="about-text-container">
+                    <div class="about-story-card">
+                        <div class="story-accent-line"></div>
+                        <p class="about-story-text">
+                            I grew up in India, where mornings smelled of <span class="text-highlight">wet earth and cardamom chai</span>—a childhood that taught me curiosity, resilience, and the value of building with purpose. That same instinct drives my journey in <span class="text-highlight">biotech and healthcare innovation</span>, where I merge science, strategy, and empathy to create products that translate complexity into clarity and real-world impact. My path from engineering to product management has been fueled by a passion for solving meaningful problems, leading cross-functional teams, and turning ideas into outcomes that make healthcare more human. Beyond work, I find balance in sports like <span class="text-highlight">gymnastics, Mallakhambh</span> (an ancient Indian pole sport), Kho-Kho, and handball, which taught me precision and perseverance, and in <span class="text-highlight">cooking</span>—an inheritance from my family that keeps me grounded in creativity and connection. Whether I'm leading a product sprint or flipping a dosa, I believe progress starts with curiosity, grows through collaboration, and lasts through kindness.
                         </p>
                     </div>
-                    
-                    <div class="about-card">
-                        <div class="card-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <p class="about-main-text">
-                            With expertise spanning 0-to-1 product development, go-to-market strategy, and commercial execution, 
-                            I've led initiatives from concept to market launch across multiple continents. My approach combines 
-                            data-driven decision making with a deep understanding of regulatory landscapes, clinical workflows, 
-                            and customer needs. Whether it's navigating FDA pathways, scaling products globally, or driving 
-                            strategic partnerships, I believe in shipping fast, learning faster, and never compromising on impact.
-                        </p>
+                </div>
+            </div>
+
+            <!-- Personal Interest Badges -->
+            <div class="about-interests-badges">
+                <div class="interest-badge" data-interest="sports">
+                    <div class="badge-icon">
+                        <i class="fas fa-running"></i>
                     </div>
+                    <span class="badge-label">Sports & Athletics</span>
+                </div>
+                <div class="interest-badge" data-interest="cooking">
+                    <div class="badge-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <span class="badge-label">Cooking & Culinary</span>
+                </div>
+                <div class="interest-badge" data-interest="travel">
+                    <div class="badge-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <span class="badge-label">Travel & Exploration</span>
+                </div>
+                <div class="interest-badge" data-interest="nature">
+                    <div class="badge-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <span class="badge-label">Nature & Balance</span>
                 </div>
             </div>
         </div>
@@ -318,39 +323,7 @@
             <h2 class="section-title">Professional Experience</h2>
             <p class="section-subtitle">Building innovative products and driving strategic impact across healthcare and life sciences</p>
             
-            <!-- Experience Filter Tabs -->
-        <div class="experience-filter-container">
-            <button class="experience-filter-btn active" data-filter="all">
-                <i class="fas fa-briefcase"></i>
-                ALL EXPERIENCE
-                <span class="filter-count">16</span>
-            </button>
-            <button class="experience-filter-btn" data-filter="current">
-                <i class="fas fa-star"></i>
-                CURRENT ROLE
-                <span class="filter-count">1</span>
-            </button>
-            <button class="experience-filter-btn" data-filter="product-marketing">
-                <i class="fas fa-chart-line"></i>
-                PRODUCT & MARKETING
-                <span class="filter-count">4</span>
-            </button>
-            <button class="experience-filter-btn" data-filter="consulting">
-                <i class="fas fa-lightbulb"></i>
-                STRATEGY CONSULTING
-                <span class="filter-count">6</span>
-            </button>
-            <button class="experience-filter-btn" data-filter="research">
-                <i class="fas fa-flask"></i>
-                RESEARCH & ENGINEERING
-                <span class="filter-count">5</span>
-            </button>
-            <button class="experience-filter-btn" data-filter="volunteering">
-                <i class="fas fa-hands-helping"></i>
-                VOLUNTEERING
-                <span class="filter-count">1</span>
-            </button>
-        </div>            <!-- Experience Timeline -->
+            <!-- Experience Timeline -->
             <div class="experience-timeline-wrapper">
                 <div class="experience-timeline-line"></div>
                 <div id="experience-cards" class="experience-cards">
@@ -534,43 +507,88 @@
         </div>
     </section>
 
-    <!-- Recommendations Section - Clean & Modern -->
-    <section id="recommendations" class="recommendations-section">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
         <div class="container">
-            <!-- Section Header -->
-            <div class="section-header-clean">
-                <h2 class="section-title-clean">Professional Recommendations</h2>
+            <h2 class="section-title">What People Say</h2>
+            <p class="section-subtitle">Recommendations from Colleagues & Leaders</p>
+            
+            <div class="testimonials-carousel">
+                <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="testimonials-track">
+                    <div class="testimonial-card active glass-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Kartik is an exceptional product leader who combines strategic thinking with hands-on execution. His ability to understand market needs and translate them into actionable product roadmaps is remarkable. He consistently delivered results that exceeded expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Sarah Chen</h4>
+                                <p class="author-title">VP of Product, Agilent Technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Working with Kartik on the Life Sciences platform was transformative. His deep understanding of the biotech space combined with product management expertise helped us achieve product-market fit faster than anticipated. A true strategic partner."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Dr. Michael Torres</h4>
+                                <p class="author-title">Chief Scientific Officer, BioTech Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Kartik's strategic consulting work was instrumental in our go-to-market success. He brings a rare combination of analytical rigor and creative problem-solving. His frameworks for product positioning were exactly what we needed."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Jennifer Williams</h4>
+                                <p class="author-title">CEO, MedTech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
             
-            <!-- Recommendation Card -->
-            <div class="recommendation-card-clean">
-                <!-- Profile Section -->
-                <div class="rec-profile">
-                    <div class="rec-avatar">
-                        <img src="assets/images/recommendations/adwiti-liberatore.jpg" 
-                             alt="Adwiti Liberatore">
-                    </div>
-                    <div class="rec-info">
-                        <h3 class="rec-name">Adwiti Liberatore</h3>
-                        <p class="rec-title">Director, Product & Business Development</p>
-                        <p class="rec-company">MSI (Motorola Solutions)</p>
-                        <span class="rec-relationship">Direct Manager • 4 Months</span>
-                    </div>
-                </div>
-                
-                <!-- Recommendation Text -->
-                <div class="rec-text">
-                    <p>Kartik did a great job of market analysis and GTM strategy for the product management club project with MSI. I worked with him for 4 months as the team worked through the scope. His ability to do in depth research and defend his findings in our meetings was impressive. I highly recommend him for any role.</p>
-                </div>
-                
-                <!-- Key Highlights -->
-                <div class="rec-highlights">
-                    <div class="highlight-tag">Market Analysis</div>
-                    <div class="highlight-tag">GTM Strategy</div>
-                    <div class="highlight-tag">Research Skills</div>
-                    <div class="highlight-tag">Product Management</div>
-                    <div class="highlight-tag">Communication</div>
-                </div>
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="goToTestimonial(0)"></span>
+                <span class="indicator" onclick="goToTestimonial(1)"></span>
+                <span class="indicator" onclick="goToTestimonial(2)"></span>
             </div>
         </div>
     </section>
