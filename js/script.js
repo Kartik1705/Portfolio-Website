@@ -976,9 +976,10 @@ function loadExperience() {
         }
         
         card.innerHTML = `
-            <div class="exp-card-spacer"></div>
-            <div class="exp-card-content">
+            <div class="exp-card-spacer">
                 <div class="exp-card-dot"></div>
+            </div>
+            <div class="exp-card-content">
                 <div class="exp-header">
                     <img src="assets/images/companies/${company.logo}" alt="${company.name}" class="exp-logo" onerror="this.style.display='none'">
                     <div class="exp-title-group">
@@ -1003,7 +1004,6 @@ function loadExperience() {
                     </a>
                 ` : ''}
             </div>
-            <div class="exp-card-spacer"></div>
         `;
         
         container.appendChild(card);
