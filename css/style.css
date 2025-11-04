@@ -8049,6 +8049,9 @@ body.dark-mode .timeline-content {
     grid-column: 2;
     width: 20px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .exp-card-content {
@@ -8100,8 +8103,9 @@ body.dark-mode .timeline-content {
 
 .exp-timeline-dot {
     position: absolute;
-    left: 0;
-    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
     width: 20px;
     height: 20px;
     background: linear-gradient(135deg, #2874A6, #5DADE2);
